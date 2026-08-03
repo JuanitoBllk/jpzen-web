@@ -29,6 +29,7 @@ const diagram = diagrams.find((item) => item.id === project.diagram);
     {diagram && <ArchitectureDiagram diagram={diagram} />}
     <DocumentationSection label="OBJECTIVE" title="What this record explores." content={project.objective} />
     <DocumentationSection label="ENGINEERING APPROACH" title="Learning through deliberate practice." content={project.approach} />
+    <DocumentationSection label="EXPERIMENT AREAS" title="Practical infrastructure study." items={project.experimentAreas} />
     <DocumentationSection label="TECHNOLOGIES" title="Public project vocabulary." items={project.technologies} />
     <DocumentationSection label="LESSONS LEARNED" title="Knowledge captured through iteration." content={project.lessons} />
     <DocumentationSection label="ENGINEERING PHILOSOPHY" title="Documented through practice." content={project.philosophy} />
