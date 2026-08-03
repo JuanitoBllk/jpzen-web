@@ -62,3 +62,7 @@ body::before {
   pointer-events: none;
 
 }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 120px;
+}
