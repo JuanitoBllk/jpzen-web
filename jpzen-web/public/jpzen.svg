@@ -1,0 +1,66 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- outer orbital ring -->
+  <circle
+    cx="256"
+    cy="256"
+    r="150"
+    stroke="#00E5FF"
+    stroke-width="6"
+    opacity="0.18"
+  />
+
+  <!-- partial orbit -->
+  <path
+    d="M136 256C136 189.726 189.726 136 256 136"
+    stroke="#00E5FF"
+    stroke-width="10"
+    stroke-linecap="round"
+    opacity="0.55"
+  />
+
+  <!-- diamond frame -->
+  <path
+    d="M256 118 L338 200 L256 282 L174 200 Z"
+    stroke="#FFFFFF"
+    stroke-width="10"
+    fill="none"
+    stroke-linejoin="round"
+  />
+
+  <!-- inner orbit -->
+  <circle
+    cx="256"
+    cy="200"
+    r="58"
+    stroke="#00E5FF"
+    stroke-width="6"
+    opacity="0.35"
+  />
+
+  <!-- core -->
+  <circle
+    cx="256"
+    cy="200"
+    r="26"
+    fill="#00E5FF"
+  />
+
+  <!-- side nodes -->
+  <circle
+    cx="128"
+    cy="256"
+    r="10"
+    fill="#FFFFFF"
+    opacity="0.9"
+  />
+
+  <circle
+    cx="384"
+    cy="256"
+    r="10"
+    fill="#FFFFFF"
+    opacity="0.9"
+  />
+
+</svg>

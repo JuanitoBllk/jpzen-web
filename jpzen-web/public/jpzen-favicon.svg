@@ -1,0 +1,47 @@
+<svg 
+width="256" 
+height="256" 
+viewBox="0 0 256 256" 
+fill="none" 
+xmlns="http://www.w3.org/2000/svg">
+
+<rect 
+width="256" 
+height="256" 
+rx="64" 
+fill="#05070D"/>
+
+
+<!-- orbital ring -->
+
+<circle
+cx="128"
+cy="128"
+r="82"
+stroke="#00E5FF"
+stroke-width="5"
+opacity="0.35"
+/>
+
+
+<!-- diamond -->
+
+<path
+d="M128 45 L190 107 L128 169 L66 107 Z"
+stroke="white"
+stroke-width="8"
+fill="none"
+/>
+
+
+<!-- core -->
+
+<circle
+cx="128"
+cy="107"
+r="22"
+fill="#00E5FF"
+/>
+
+
+</svg>

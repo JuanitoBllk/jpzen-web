@@ -1,8 +1,12 @@
 <div id="boot-screen"
 class="fixed inset-0 z-[100] bg-black text-cyan-400 flex items-center justify-center">
 
-  <div class="w-full max-w-lg px-6 font-mono">
-
+  <div class="w-full max-w-lg px-6 font-mono text-center">
+<img 
+src="/jpzen-favicon.svg"
+alt="JPZEN Core"
+class="w-20 h-20 mx-auto mb-8"
+/>
     <p id="title" class="text-xl tracking-[0.4em] mb-6"></p>
 
     <p id="init" class="text-gray-400 mb-8"></p>
@@ -169,7 +173,7 @@ async function boot(){
 
   await typeText(
     document.getElementById("title"),
-    "JPZEN CORE v0.2_",
+    "JPZEN CORE v0.3_",
     45
   );
 
@@ -294,5 +298,35 @@ boot();
   }
 
 }
+img {
 
+  filter:
+  drop-shadow(0 0 15px #00E5FF);
+
+  animation:
+  pulse-core 2s infinite;
+
+}
+
+
+@keyframes pulse-core {
+
+0%,100%{
+
+transform:scale(1);
+
+opacity:1;
+
+}
+
+
+50%{
+
+transform:scale(1.05);
+
+opacity:.8;
+
+}
+
+}
 </style>
