@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import Navbar from '../components/Navbar.astro';
+import BootSequence from '../components/BootSequence.astro';
 
 const { title = "JPZEN" } = Astro.props;
 ---
@@ -18,46 +19,52 @@ const { title = "JPZEN" } = Astro.props;
   </head>
 
 
-  <body>
+ <body>
 
-    <Navbar />
+  <BootSequence />
 
-    <slot />
-<script>
-  document.querySelectorAll('a[href^="#"]').forEach(link => {
+  <Navbar />
 
-    link.addEventListener('click', (event) => {
-
-      event.preventDefault();
-
-      const target = document.querySelector(
-        link.getAttribute('href')
-      );
-
-      if (target) {
-
-        const offset = 100;
-
-        const targetPosition =
-          target.getBoundingClientRect().top +
-          window.scrollY -
-          offset;
+  <slot />
 
 
-        window.scrollTo({
+  <script>
 
-          top: targetPosition,
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
 
-          behavior: "smooth"
+      link.addEventListener('click', (event) => {
 
-        });
+        event.preventDefault();
 
-      }
+        const target = document.querySelector(
+          link.getAttribute('href')
+        );
+
+        if (target) {
+
+          const offset = 100;
+
+          const targetPosition =
+            target.getBoundingClientRect().top +
+            window.scrollY -
+            offset;
+
+
+          window.scrollTo({
+
+            top: targetPosition,
+
+            behavior: "smooth"
+
+          });
+
+        }
+
+      });
 
     });
 
-  });
-</script>
-  </body>
+  </script>
 
+</body>
 </html>

@@ -1,0 +1,298 @@
+<div id="boot-screen"
+class="fixed inset-0 z-[100] bg-black text-cyan-400 flex items-center justify-center">
+
+  <div class="w-full max-w-lg px-6 font-mono">
+
+    <p id="title" class="text-xl tracking-[0.4em] mb-6"></p>
+
+    <p id="init" class="text-gray-400 mb-8"></p>
+
+
+    <div class="space-y-8">
+
+
+      <div>
+        <p>
+          [ ATLAS ] Infrastructure Core
+        </p>
+
+        <div class="mt-2 h-1 bg-gray-800 rounded">
+
+          <div 
+          id="atlas"
+          class="h-1 bg-cyan-400 rounded"
+          style="width:0%">
+          </div>
+
+        </div>
+
+        <p id="atlas-status"
+        class="text-gray-500 text-sm mt-2">
+        </p>
+
+      </div>
+
+
+
+      <div>
+
+        <p>
+          [ NOVA ] AI & Automation Core
+        </p>
+
+        <div class="mt-2 h-1 bg-gray-800 rounded">
+
+          <div 
+          id="nova"
+          class="h-1 bg-cyan-400 rounded"
+          style="width:0%">
+          </div>
+
+        </div>
+
+        <p id="nova-status"
+        class="text-gray-500 text-sm mt-2">
+        </p>
+
+      </div>
+
+
+
+
+      <div>
+
+        <p>
+          [ ORION ] Network Layer
+        </p>
+
+        <div class="mt-2 h-1 bg-gray-800 rounded">
+
+          <div 
+          id="orion"
+          class="h-1 bg-cyan-400 rounded"
+          style="width:0%">
+          </div>
+
+        </div>
+
+        <p id="orion-status"
+        class="text-gray-500 text-sm mt-2">
+        </p>
+
+      </div>
+
+
+    </div>
+
+
+    <p id="online"
+    class="mt-10 text-white tracking-widest">
+    </p>
+
+
+  </div>
+
+</div>
+
+
+
+<script>
+
+function typeText(element, text, speed){
+
+  return new Promise(resolve => {
+
+    let i = 0;
+
+    const interval = setInterval(() => {
+
+      element.textContent += text[i];
+
+      i++;
+
+      if(i >= text.length){
+
+        clearInterval(interval);
+
+        resolve();
+
+      }
+
+    }, speed);
+
+  });
+
+}
+
+
+
+function loadBar(id, percent, duration){
+
+  return new Promise(resolve => {
+
+
+    const bar = document.getElementById(id);
+
+    let width = 0;
+
+
+    const interval = setInterval(() => {
+
+
+      width++;
+
+
+      bar.style.width = width + "%";
+
+
+      if(width >= percent){
+
+        clearInterval(interval);
+
+        resolve();
+
+      }
+
+
+    }, duration / percent);
+
+
+  });
+
+}
+
+
+
+
+async function boot(){
+
+
+  await typeText(
+    document.getElementById("title"),
+    "JPZEN CORE v0.2_",
+    45
+  );
+
+
+  await typeText(
+    document.getElementById("init"),
+    "INITIALIZING SYSTEM...",
+    35
+  );
+
+
+
+  await loadBar(
+    "atlas",
+    100,
+    500
+  );
+
+
+  document.getElementById(
+    "atlas-status"
+  ).textContent =
+  "STATUS: ONLINE";
+
+
+
+  await loadBar(
+    "nova",
+    100,
+    500
+  );
+
+
+  document.getElementById(
+    "nova-status"
+  ).textContent =
+  "STATUS: ONLINE";
+
+
+
+  await loadBar(
+    "orion",
+    40,
+    250
+  );
+
+
+  document.getElementById(
+    "orion-status"
+  ).textContent =
+  "STATUS: STANDBY";
+
+
+
+  await typeText(
+    document.getElementById("online"),
+    "SYSTEM ONLINE_",
+    45
+  );
+
+
+
+  setTimeout(() => {
+
+
+    const screen =
+    document.getElementById(
+      "boot-screen"
+    );
+
+
+    screen.style.opacity="0";
+
+
+    setTimeout(() => {
+
+      screen.remove();
+
+    },500);
+
+
+  },500);
+
+
+
+}
+
+
+
+boot();
+
+
+</script>
+
+
+
+<style>
+
+#boot-screen{
+
+  transition:
+  opacity .5s ease;
+
+}
+
+
+#online{
+
+  animation:
+  blink 1s infinite;
+
+}
+
+
+
+@keyframes blink{
+
+  50%{
+
+    opacity:.3;
+
+  }
+
+}
+
+</style>
