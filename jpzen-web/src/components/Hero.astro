@@ -1,0 +1,45 @@
+---
+import SystemPanel from './SystemPanel.astro';
+import Projects from './Projects.astro';
+import MissionLog from './MissionLog.astro';
+---
+<section class="min-h-screen flex items-center justify-center bg-black text-white">
+
+  <div class="text-center max-w-4xl px-6">
+
+    <p class="text-cyan-400 tracking-[0.5em] text-sm mb-8">
+      SYSTEM ONLINE
+    </p>
+
+
+    <h1 class="text-6xl md:text-8xl font-bold tracking-[0.25em]">
+      JPZEN
+    </h1>
+
+
+    <h2 class="mt-8 text-2xl md:text-4xl font-semibold">
+      CURIOUS BY NATURE.
+      <br />
+      BUILDING THROUGH EXPERIMENTATION.
+    </h2>
+
+
+    <p class="mt-8 text-gray-400 text-lg">
+      Personal technology laboratory focused on
+      infrastructure, artificial intelligence,
+      automation and networking.
+    </p>
+
+
+    <button class="mt-12 border border-cyan-400 px-8 py-3 rounded-full text-cyan-400 hover:bg-cyan-400 hover:text-black transition">
+
+      ENTER THE LAB
+
+    </button>
+
+<SystemPanel />     
+<Projects />
+<MissionLog />
+  </div>
+
+</section>
