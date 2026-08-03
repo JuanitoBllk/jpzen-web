@@ -1,5 +1,7 @@
 ---
+import ArchitectureDiagram from '../../components/ArchitectureDiagram.astro';
 import DocumentationSection from '../../components/DocumentationSection.astro';
+import { diagrams } from '../../data/diagrams.js';
 import Layout from '../../layouts/Layout.astro';
 import ProjectPageHero from '../../components/ProjectPageHero.astro';
 import { projects } from '../../data/projects.js';
@@ -12,6 +14,7 @@ export function getStaticPaths() {
 }
 
 const { project } = Astro.props;
+const diagram = diagrams.find((item) => item.id === project.diagram);
 ---
 
 <Layout
@@ -23,6 +26,7 @@ const { project } = Astro.props;
 
   <div class="pb-20 md:pb-28">
     <DocumentationSection label="OVERVIEW" title="Engineering context." content={project.description} />
+    {diagram && <ArchitectureDiagram diagram={diagram} />}
     <DocumentationSection label="OBJECTIVE" title="What this record explores." content={project.objective} />
     <DocumentationSection label="ENGINEERING APPROACH" title="Learning through deliberate practice." content={project.approach} />
     <DocumentationSection label="TECHNOLOGIES" title="Public project vocabulary." items={project.technologies} />

@@ -21,7 +21,8 @@ const articles = [
         body: 'Recording experiments creates a long-term engineering memory.'
       }
     ],
-    technologies: ['Virtualization', 'Linux', 'Self-hosted Systems']
+    technologies: ['Virtualization', 'Linux', 'Self-hosted Systems'],
+    diagram: 'personal-technology-laboratory'
   },
   {
     title: 'Exploring AI Automation Workflows',

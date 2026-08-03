@@ -1,6 +1,8 @@
 ---
+import ArchitectureDiagram from '../../components/ArchitectureDiagram.astro';
 import ArticleSection from '../../components/ArticleSection.astro';
 import { articles } from '../../data/articles.js';
+import { diagrams } from '../../data/diagrams.js';
 import Layout from '../../layouts/Layout.astro';
 
 export function getStaticPaths() {
@@ -11,6 +13,7 @@ export function getStaticPaths() {
 }
 
 const { article } = Astro.props;
+const diagram = diagrams.find((item) => item.id === article.diagram);
 const coreRoutes = {
   ATLAS: '/atlas/',
   NOVA: '/nova/',
@@ -42,6 +45,8 @@ const coreRoutes = {
     <div class="max-w-3xl">
       {article.sections.map((section, index) => <ArticleSection section={section} index={index} />)}
     </div>
+
+    {diagram && <ArchitectureDiagram diagram={diagram} />}
 
     <section class="mt-16 grid gap-8 border-t border-cyan-300/15 pt-8 md:grid-cols-[0.7fr_1.3fr] md:pt-10">
       <div>

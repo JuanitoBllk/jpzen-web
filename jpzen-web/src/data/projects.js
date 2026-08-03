@@ -45,7 +45,8 @@ const projects = [
     objective: 'Explore practical AI-assisted workflows and automation systems.',
     approach: 'Experiment through controlled environments and incremental improvements.',
     lessons: 'Document learning, iteration and practical limitations of automation systems.',
-    future: 'Continue exploring useful AI workflows and integrations.'
+    future: 'Continue exploring useful AI workflows and integrations.',
+    diagram: 'automation-workflow-concept'
   },
   {
     slug: 'proxmox-lab',
@@ -60,7 +61,8 @@ const projects = [
     objective: 'Understand virtualization, containers and infrastructure concepts through hands-on experimentation.',
     approach: 'Build knowledge through controlled testing environments.',
     lessons: 'Infrastructure knowledge improves through experimentation, documentation and repetition.',
-    future: 'Continue expanding understanding of modern infrastructure systems.'
+    future: 'Continue expanding understanding of modern infrastructure systems.',
+    diagram: 'infrastructure-core-concept'
   },
   {
     slug: 'home-network',
@@ -75,7 +77,8 @@ const projects = [
     objective: 'Explore networking concepts through progressive improvements.',
     approach: 'Study architecture, organization and security concepts.',
     lessons: 'Reliable networks are built through measurement and gradual improvement.',
-    future: 'Continue learning networking architecture and security practices.'
+    future: 'Continue learning networking architecture and security practices.',
+    diagram: 'network-evolution-concept'
   }
 ];
 

@@ -1,0 +1,38 @@
+---
+const { diagram } = Astro.props;
+---
+
+<section class="mx-auto mt-24 max-w-6xl px-6 md:mt-32">
+  <div class="grid gap-8 border-t border-cyan-300/15 pt-8 md:grid-cols-[0.7fr_1.3fr] md:pt-10">
+    <div>
+      <p class="font-mono text-xs tracking-[0.18em] text-cyan-300">ARCHITECTURE DIAGRAM</p>
+      <h2 class="mt-4 text-3xl font-semibold tracking-[-0.04em] text-white md:text-4xl">{diagram.name}</h2>
+      {diagram.relatedCore && <p class="mt-3 font-mono text-xs tracking-[0.12em] text-slate-500">RELATED CORE / {diagram.relatedCore}</p>}
+    </div>
+    <p class="max-w-2xl text-base leading-7 text-slate-400">{diagram.purpose}</p>
+  </div>
+
+  <ol class="mx-auto mt-12 max-w-2xl">
+    {diagram.nodes.map((node, index) => {
+      const connection = diagram.connections.find((item) => item.from === node.id);
+
+      return (
+        <li class="relative">
+          <div class="border border-cyan-300/20 bg-slate-950/45 px-5 py-5 sm:px-6">
+            <p class="font-mono text-xs text-cyan-300">0{index + 1}</p>
+            <h3 class="mt-3 text-lg font-semibold text-white">{node.label}</h3>
+            <p class="mt-2 text-sm leading-6 text-slate-400">{node.description}</p>
+          </div>
+
+          {connection && (
+            <div class="flex min-h-14 flex-col items-center justify-center py-2" aria-label={`${node.label} ${connection.label} ${diagram.nodes.find((item) => item.id === connection.to)?.label}`}>
+              <span class="h-6 w-px bg-cyan-300/35"></span>
+              <span class="my-1 font-mono text-[10px] tracking-[0.12em] text-cyan-300/75">{connection.label}</span>
+              <span class="h-6 w-px bg-cyan-300/35"></span>
+            </div>
+          )}
+        </li>
+      );
+    })}
+  </ol>
+</section>
