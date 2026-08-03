@@ -1,14 +1,15 @@
 ---
 import CorePageHero from '../components/CorePageHero.astro';
+import CoreConnections from '../components/CoreConnections.astro';
 import SystemCard from '../components/SystemCard.astro';
 import { nova } from '../data/nova.js';
 import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout
-  title="NOVA | JPZEN"
+  title="JPZEN | NOVA AI Automation Core"
   description="NOVA is the AI and automation experimentation core of the JPZEN personal technology laboratory."
-  canonicalPath="/nova"
+  canonicalPath="/nova/"
 >
   <CorePageHero core={nova} />
 
@@ -35,6 +36,27 @@ import Layout from '../layouts/Layout.astro';
       <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-300 md:mt-0">NOVA explores AI-assisted workflows, agents, and automation experiments through small, testable iterations that can inform future practical systems.</p>
     </div>
   </section>
+
+  <div class="mt-24 md:mt-32">
+    <CoreConnections
+      title="Experimentation connected to foundations."
+      description="NOVA builds experimentation workflows on top of a stable foundation. Its work is informed by ATLAS infrastructure and future ORION connectivity evolution."
+      links={[
+        {
+          href: '/atlas/',
+          label: 'INFRASTRUCTURE CORE',
+          name: 'ATLAS',
+          description: 'Provides the dependable foundation for building and maintaining practical systems.'
+        },
+        {
+          href: '/orion/',
+          label: 'NETWORK & CONNECTIVITY CORE',
+          name: 'ORION',
+          description: 'Represents the future connectivity evolution that can support new experiments.'
+        }
+      ]}
+    />
+  </div>
 
   <section class="mx-auto mt-24 max-w-6xl px-6 pb-20 md:mt-32 md:pb-28">
     <div class="border-t border-cyan-300/15 pt-8 md:grid md:grid-cols-[0.7fr_1.3fr] md:gap-8 md:pt-10">

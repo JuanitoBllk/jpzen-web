@@ -1,31 +1,12 @@
 ---
-const defaultEntries = [
-  {
-    date: '2026.08',
-    title: 'FOUNDATION ESTABLISHED',
-    description: 'The first private foundation for hands-on infrastructure experimentation was put in place.',
-    status: 'IMPLEMENTED'
-  },
-  {
-    date: '2026.08',
-    title: 'AUTOMATION EXPLORATION BEGINS',
-    description: 'AI-assisted workflows and agent experiments became part of the laboratory’s practical research path.',
-    status: 'IMPLEMENTED'
-  },
-  {
-    date: 'NEXT',
-    title: 'CONNECTIVITY EVOLUTION',
-    description: 'Network segmentation, security boundaries, and managed connectivity form the next planned chapter.',
-    status: 'PLANNED'
-  }
-];
+import { fieldLogEntries } from '../data/log.js';
 
 const {
   id = 'missions',
   label = 'FIELD NOTES',
   title = 'The laboratory is built in chapters.',
   summary = 'A concise record of implemented work and the next deliberate direction. Planned work remains clearly marked until it becomes real.',
-  entries = defaultEntries
+  entries = fieldLogEntries
 } = Astro.props;
 ---
 

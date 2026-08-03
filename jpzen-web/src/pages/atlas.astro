@@ -1,5 +1,6 @@
 ---
 import ArchitectureFlow from '../components/ArchitectureFlow.astro';
+import CoreConnections from '../components/CoreConnections.astro';
 import CorePageHero from '../components/CorePageHero.astro';
 import SystemCard from '../components/SystemCard.astro';
 import { atlas } from '../data/atlas.js';
@@ -7,9 +8,9 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout
-  title="ATLAS | JPZEN"
+  title="JPZEN | ATLAS Infrastructure Core"
   description="ATLAS is the implemented infrastructure foundation of the JPZEN personal technology laboratory."
-  canonicalPath="/atlas"
+  canonicalPath="/atlas/"
 >
   <CorePageHero core={atlas} />
 
@@ -30,6 +31,27 @@ import Layout from '../layouts/Layout.astro';
       {atlas.systems.map((system, index) => <SystemCard system={system} index={index} />)}
     </div>
   </section>
+
+  <div class="mt-24 md:mt-32">
+    <CoreConnections
+      title="Foundation for connected work."
+      description="ATLAS provides the foundation where systems are built and maintained. Future experimentation and connectivity layers connect through NOVA and ORION."
+      links={[
+        {
+          href: '/nova/',
+          label: 'AI & AUTOMATION CORE',
+          name: 'NOVA',
+          description: 'Builds practical experimentation workflows on top of a stable foundation.'
+        },
+        {
+          href: '/orion/',
+          label: 'NETWORK & CONNECTIVITY CORE',
+          name: 'ORION',
+          description: 'Defines the staged connectivity evolution that can support future systems.'
+        }
+      ]}
+    />
+  </div>
 
   <section class="mx-auto mt-24 max-w-6xl px-6 pb-20 md:mt-32 md:pb-28">
     <div class="border-l border-cyan-300/45 pl-6 md:grid md:grid-cols-[0.7fr_1.3fr] md:gap-8 md:pl-8">

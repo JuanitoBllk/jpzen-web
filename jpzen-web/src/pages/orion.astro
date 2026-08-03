@@ -1,14 +1,15 @@
 ---
 import CorePageHero from '../components/CorePageHero.astro';
+import CoreConnections from '../components/CoreConnections.astro';
 import SystemCard from '../components/SystemCard.astro';
 import { orion } from '../data/orion.js';
 import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout
-  title="ORION | JPZEN"
+  title="JPZEN | ORION Network Core"
   description="ORION is the planned network and connectivity evolution core of the JPZEN personal technology laboratory."
-  canonicalPath="/orion"
+  canonicalPath="/orion/"
 >
   <CorePageHero core={orion} />
 
@@ -35,6 +36,27 @@ import Layout from '../layouts/Layout.astro';
       <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-300 md:mt-0">ORION represents future connectivity improvements through staged, evidence-based evolution. Each phase is approached only after the previous foundation is understood and validated.</p>
     </div>
   </section>
+
+  <div class="mt-24 md:mt-32">
+    <CoreConnections
+      title="Connectivity shaped by the laboratory."
+      description="ORION represents future connectivity evolution. Its staged direction is informed by the ATLAS foundation and the experimentation work explored through NOVA."
+      links={[
+        {
+          href: '/atlas/',
+          label: 'INFRASTRUCTURE CORE',
+          name: 'ATLAS',
+          description: 'Provides the foundational layer that future connectivity work must support.'
+        },
+        {
+          href: '/nova/',
+          label: 'AI & AUTOMATION CORE',
+          name: 'NOVA',
+          description: 'Explores practical systems that can inform future connectivity needs.'
+        }
+      ]}
+    />
+  </div>
 
   <section class="mx-auto mt-24 max-w-6xl px-6 pb-20 md:mt-32 md:pb-28">
     <div class="border-t border-dashed border-cyan-300/20 pt-8 md:grid md:grid-cols-[0.7fr_1.3fr] md:gap-8 md:pt-10">

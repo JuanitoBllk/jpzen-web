@@ -1,9 +1,14 @@
 ---
 const isHome = Astro.url.pathname === '/';
+const isAtlas = Astro.url.pathname === '/atlas/' || Astro.url.pathname === '/atlas';
+const isNova = Astro.url.pathname === '/nova/' || Astro.url.pathname === '/nova';
+const isOrion = Astro.url.pathname === '/orion/' || Astro.url.pathname === '/orion';
+const isLog = Astro.url.pathname === '/log/' || Astro.url.pathname === '/log';
 const homeHref = isHome ? '#top' : '/';
-const coreHref = isHome ? '#systems' : '/#systems';
-const logHref = '/log';
-const philosophyHref = isHome ? '#about' : '/#about';
+const atlasHref = isHome ? '#atlas' : isAtlas ? '#top' : '/atlas/';
+const novaHref = isHome ? '#nova' : isNova ? '#top' : '/nova/';
+const orionHref = isHome ? '#orion' : isOrion ? '#top' : '/orion/';
+const logHref = isLog ? '#log' : '/log/';
 ---
 
 <nav class="fixed left-0 top-0 z-50 w-full px-4 py-4 sm:px-6">
@@ -14,21 +19,25 @@ const philosophyHref = isHome ? '#about' : '/#about';
         <span class="text-sm font-semibold tracking-[0.24em]">JPZEN</span>
       </a>
 
-      <div class="hidden items-center gap-7 font-mono text-xs tracking-[0.1em] text-slate-400 md:flex">
-        <a href={coreHref} class="transition hover:text-cyan-300">CORES</a>
+      <div class="hidden items-center gap-5 font-mono text-xs tracking-[0.1em] text-slate-400 lg:flex">
+        <a href={homeHref} class="transition hover:text-cyan-300">HOME</a>
+        <a href={atlasHref} class="transition hover:text-cyan-300">ATLAS</a>
+        <a href={novaHref} class="transition hover:text-cyan-300">NOVA</a>
+        <a href={orionHref} class="transition hover:text-cyan-300">ORION</a>
         <a href={logHref} class="transition hover:text-cyan-300">LOG</a>
-        <a href={philosophyHref} class="transition hover:text-cyan-300">PHILOSOPHY</a>
       </div>
 
-      <details class="relative md:hidden">
+      <details class="relative lg:hidden">
         <summary class="flex h-9 w-9 cursor-pointer list-none items-center justify-center border border-cyan-300/25 text-cyan-300 [&::-webkit-details-marker]:hidden">
           <span class="sr-only">Open navigation</span>
           <span class="flex flex-col gap-1.5" aria-hidden="true"><span class="h-px w-4 bg-current"></span><span class="h-px w-4 bg-current"></span></span>
         </summary>
         <div class="absolute right-0 mt-3 w-52 border border-cyan-300/20 bg-slate-950 p-2 shadow-2xl shadow-black/40">
-          <a href={coreHref} class="block px-3 py-3 font-mono text-xs tracking-[0.1em] text-slate-300 hover:bg-cyan-300/10 hover:text-cyan-300">CORES</a>
+          <a href={homeHref} class="block px-3 py-3 font-mono text-xs tracking-[0.1em] text-slate-300 hover:bg-cyan-300/10 hover:text-cyan-300">HOME</a>
+          <a href={atlasHref} class="block px-3 py-3 font-mono text-xs tracking-[0.1em] text-slate-300 hover:bg-cyan-300/10 hover:text-cyan-300">ATLAS</a>
+          <a href={novaHref} class="block px-3 py-3 font-mono text-xs tracking-[0.1em] text-slate-300 hover:bg-cyan-300/10 hover:text-cyan-300">NOVA</a>
+          <a href={orionHref} class="block px-3 py-3 font-mono text-xs tracking-[0.1em] text-slate-300 hover:bg-cyan-300/10 hover:text-cyan-300">ORION</a>
           <a href={logHref} class="block px-3 py-3 font-mono text-xs tracking-[0.1em] text-slate-300 hover:bg-cyan-300/10 hover:text-cyan-300">LOG</a>
-          <a href={philosophyHref} class="block px-3 py-3 font-mono text-xs tracking-[0.1em] text-slate-300 hover:bg-cyan-300/10 hover:text-cyan-300">PHILOSOPHY</a>
         </div>
       </details>
     </div>

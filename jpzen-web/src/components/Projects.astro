@@ -9,19 +9,20 @@ import { systems } from '../data/system.js';
       <h2 class="mt-4 text-3xl font-semibold tracking-[-0.04em] text-white md:text-4xl">Three paths of practical exploration.</h2>
     </div>
     <p class="max-w-2xl text-base leading-7 text-slate-400">
-      JPZEN is organized around a stable foundation, active experimentation, and intentional future work. Each core records a different stage of the laboratory.
+      JPZEN is organized around a stable foundation, active experimentation, and intentional future work. Explore each core as a public record of purpose, progress, and learning.
     </p>
   </div>
 
   <div class="mt-10 border-y border-cyan-300/15">
     {systems.map((system, index) => (
-      <a href={`#${system.id}`} class="group grid gap-4 border-b border-cyan-300/10 py-6 last:border-b-0 md:grid-cols-[4rem_1fr_auto] md:items-center md:gap-8">
+      <a href={`/${system.id}/`} class="group grid gap-4 border-b border-cyan-300/10 py-6 last:border-b-0 md:grid-cols-[3rem_minmax(0,1fr)_auto] md:items-center md:gap-6">
         <span class="font-mono text-xs text-cyan-300">0{index + 1}</span>
-        <span>
+        <span class="min-w-0">
           <span class="block text-2xl font-semibold tracking-[0.08em] text-white transition group-hover:text-cyan-300">{system.name}</span>
           <span class="mt-1 block text-sm text-slate-500">{system.category}</span>
+          <span class="mt-3 block max-w-xl text-sm leading-6 text-slate-400">{system.description}</span>
         </span>
-        <span class="font-mono text-xs tracking-[0.1em] text-slate-400 transition group-hover:text-cyan-300">{system.status}</span>
+        <span class="font-mono text-xs tracking-[0.1em] text-slate-400 transition group-hover:text-cyan-300 md:text-right">{system.status} / VIEW CORE</span>
       </a>
     ))}
   </div>

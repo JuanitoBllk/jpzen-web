@@ -1,15 +1,22 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
+import LabStatus from '../components/LabStatus.astro';
 import Projects from '../components/Projects.astro';
 import MissionLog from '../components/MissionLog.astro';
 import SystemConsole from '../components/SystemConsole.astro';
 import About from '../components/About.astro';
 ---
 
-<Layout title="JPZEN">
+<Layout
+  title="JPZEN | Personal Technology Laboratory"
+  description="JPZEN documents personal experiments, systems, learning, and engineering progress across infrastructure, AI, automation, and networking."
+  canonicalPath="/"
+>
 
   <Hero />
+
+  <LabStatus />
 
   <Projects />
 

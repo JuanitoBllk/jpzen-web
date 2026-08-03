@@ -8,7 +8,8 @@ const {
   canonicalPath = "/"
 } = Astro.props;
 const siteUrl = "https://jpzen.net";
-const canonicalUrl = new URL(canonicalPath, siteUrl).href;
+const normalizedCanonicalPath = canonicalPath === "/" ? "/" : `${canonicalPath.replace(/\/+$/, "")}/`;
+const canonicalUrl = new URL(normalizedCanonicalPath, siteUrl).href;
 const socialImageUrl = new URL("/og-image.png", siteUrl).href;
 ---
 
