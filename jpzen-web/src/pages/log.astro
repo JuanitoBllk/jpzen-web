@@ -1,0 +1,39 @@
+---
+import Layout from '../layouts/Layout.astro';
+import MissionLog from '../components/MissionLog.astro';
+
+const entries = [
+  {
+    date: '2026.08',
+    title: 'FOUNDATION ESTABLISHED',
+    description: 'Private infrastructure laboratory foundation created.',
+    status: 'IMPLEMENTED'
+  },
+  {
+    date: '2026.08',
+    title: 'ATLAS CORE DEPLOYED',
+    description: 'Public documentation layer for infrastructure systems released.',
+    status: 'IMPLEMENTED'
+  },
+  {
+    date: '2026.08',
+    title: 'AUTOMATION EXPLORATION BEGINS',
+    description: 'AI agents and automation experiments added to the laboratory roadmap.',
+    status: 'IMPLEMENTED'
+  }
+];
+---
+
+<Layout
+  title="FIELD LOG | JPZEN"
+  description="Completed milestones from the JPZEN personal technology laboratory."
+  canonicalPath="/log"
+>
+  <MissionLog
+    id="log"
+    label="FIELD LOG"
+    title="Completed milestones."
+    summary="A public record of completed laboratory chapters. Entries describe verified progress without exposing private infrastructure details."
+    entries={entries}
+  />
+</Layout>

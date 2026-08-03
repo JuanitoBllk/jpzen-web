@@ -1,37 +1,54 @@
-<section id="missions" class="field-notes mx-auto mt-28 max-w-6xl px-6 md:mt-32">
+---
+const defaultEntries = [
+  {
+    date: '2026.08',
+    title: 'FOUNDATION ESTABLISHED',
+    description: 'The first private foundation for hands-on infrastructure experimentation was put in place.',
+    status: 'IMPLEMENTED'
+  },
+  {
+    date: '2026.08',
+    title: 'AUTOMATION EXPLORATION BEGINS',
+    description: 'AI-assisted workflows and agent experiments became part of the laboratory’s practical research path.',
+    status: 'IMPLEMENTED'
+  },
+  {
+    date: 'NEXT',
+    title: 'CONNECTIVITY EVOLUTION',
+    description: 'Network segmentation, security boundaries, and managed connectivity form the next planned chapter.',
+    status: 'PLANNED'
+  }
+];
+
+const {
+  id = 'missions',
+  label = 'FIELD NOTES',
+  title = 'The laboratory is built in chapters.',
+  summary = 'A concise record of implemented work and the next deliberate direction. Planned work remains clearly marked until it becomes real.',
+  entries = defaultEntries
+} = Astro.props;
+---
+
+<section id={id} class="field-notes mx-auto mt-28 max-w-6xl px-6 md:mt-32">
   <div class="field-notes-header grid gap-8 border-t border-cyan-300/15 pt-8 md:grid-cols-[0.7fr_1.3fr] md:pt-10">
     <div>
-      <p class="font-mono text-xs tracking-[0.18em] text-cyan-300">FIELD NOTES</p>
-      <h2 class="mt-4 text-3xl font-semibold tracking-[-0.04em] text-white md:text-4xl">The laboratory is built in chapters.</h2>
+      <p class="font-mono text-xs tracking-[0.18em] text-cyan-300">{label}</p>
+      <h2 class="mt-4 text-3xl font-semibold tracking-[-0.04em] text-white md:text-4xl">{title}</h2>
     </div>
-    <p class="max-w-2xl text-base leading-7 text-slate-400">A concise record of implemented work and the next deliberate direction. Planned work remains clearly marked until it becomes real.</p>
+    <p class="max-w-2xl text-base leading-7 text-slate-400">{summary}</p>
   </div>
 
   <ol class="field-notes-list mt-10 border-l border-cyan-300/20">
-    <li class="field-note grid gap-4 border-b border-cyan-300/10 py-6 pl-6 md:grid-cols-[8rem_1fr_auto] md:items-start md:gap-8">
-      <p class="font-mono text-xs text-cyan-300">2026.08</p>
-      <div>
-        <h3 class="text-xl font-semibold text-white">FOUNDATION ESTABLISHED</h3>
-        <p class="mt-2 max-w-xl text-sm leading-6 text-slate-400">The first private foundation for hands-on infrastructure experimentation was put in place.</p>
-      </div>
-      <p class="font-mono text-xs tracking-[0.1em] text-slate-500">IMPLEMENTED</p>
-    </li>
-    <li class="field-note grid gap-4 border-b border-cyan-300/10 py-6 pl-6 md:grid-cols-[8rem_1fr_auto] md:items-start md:gap-8">
-      <p class="font-mono text-xs text-cyan-300">2026.08</p>
-      <div>
-        <h3 class="text-xl font-semibold text-white">AUTOMATION EXPLORATION BEGINS</h3>
-        <p class="mt-2 max-w-xl text-sm leading-6 text-slate-400">AI-assisted workflows and agent experiments became part of the laboratory’s practical research path.</p>
-      </div>
-      <p class="font-mono text-xs tracking-[0.1em] text-slate-500">IMPLEMENTED</p>
-    </li>
-    <li class="field-note grid gap-4 py-6 pl-6 md:grid-cols-[8rem_1fr_auto] md:items-start md:gap-8">
-      <p class="font-mono text-xs text-slate-500">NEXT</p>
-      <div>
-        <h3 class="text-xl font-semibold text-white">CONNECTIVITY EVOLUTION</h3>
-        <p class="mt-2 max-w-xl text-sm leading-6 text-slate-400">Network segmentation, security boundaries, and managed connectivity form the next planned chapter.</p>
-      </div>
-      <p class="font-mono text-xs tracking-[0.1em] text-slate-500">PLANNED</p>
-    </li>
+    {entries.map((entry, index) => (
+      <li class:list={['field-note', { 'is-planned': entry.status === 'PLANNED' }, 'grid gap-4 py-6 pl-6 md:grid-cols-[8rem_1fr_auto] md:items-start md:gap-8', { 'border-b border-cyan-300/10': index < entries.length - 1 }]}>
+        <p class:list={['font-mono text-xs', entry.status === 'PLANNED' ? 'text-slate-500' : 'text-cyan-300']}>{entry.date}</p>
+        <div>
+          <h3 class="text-xl font-semibold text-white">{entry.title}</h3>
+          <p class="mt-2 max-w-xl text-sm leading-6 text-slate-400">{entry.description}</p>
+        </div>
+        <p class="font-mono text-xs tracking-[0.1em] text-slate-500">{entry.status}</p>
+      </li>
+    ))}
   </ol>
 </section>
 
@@ -76,7 +93,7 @@
     box-shadow: 0 0 0 5px rgba(5, 7, 13, 0.9);
   }
 
-  .field-note:last-child::before {
+  .field-note.is-planned::before {
     border-style: dashed;
     opacity: 0.7;
   }
