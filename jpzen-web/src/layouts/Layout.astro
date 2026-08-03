@@ -5,12 +5,20 @@ import Navbar from '../components/Navbar.astro';
 const {
   title = "JPZEN",
   description = "JPZEN is a personal technology laboratory for practical exploration in infrastructure, artificial intelligence, automation, and networking.",
-  canonicalPath = "/"
+  canonicalPath = "/",
+  robots = "index,follow"
 } = Astro.props;
 const siteUrl = "https://jpzen.net";
 const normalizedCanonicalPath = canonicalPath === "/" ? "/" : `${canonicalPath.replace(/\/+$/, "")}/`;
 const canonicalUrl = new URL(normalizedCanonicalPath, siteUrl).href;
 const socialImageUrl = new URL("/og-image.png", siteUrl).href;
+const websiteSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "JPZEN",
+  url: siteUrl,
+  description: "A personal technology laboratory for infrastructure, artificial intelligence, automation, and networking."
+});
 ---
 
 <html lang="en">
@@ -20,6 +28,8 @@ const socialImageUrl = new URL("/og-image.png", siteUrl).href;
 <meta charset="UTF-8" />
 
 <meta name="viewport" content="width=device-width" />
+<meta name="theme-color" content="#05070D" />
+<meta name="robots" content={robots} />
 
 <meta name="description" content={description} />
 <link rel="canonical" href={canonicalUrl} />
@@ -38,11 +48,15 @@ const socialImageUrl = new URL("/og-image.png", siteUrl).href;
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={socialImageUrl} />
 
+<link rel="alternate" type="application/rss+xml" title="JPZEN Technical Articles" href="/rss.xml" />
+
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
 
-<link rel="icon" href="/jpzen-favicon.svg" />
+<link rel="icon" type="image/svg+xml" href="/jpzen-favicon.svg" />
+
+<script type="application/ld+json" set:html={websiteSchema}></script>
 
 <title>{title}</title>
 

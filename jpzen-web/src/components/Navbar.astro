@@ -17,11 +17,11 @@ const changelogHref = isChangelog ? '#top' : '/changelog/';
 const logHref = isLog ? '#log' : '/log/';
 ---
 
-<nav class="fixed left-0 top-0 z-50 w-full px-4 py-4 sm:px-6">
+<nav aria-label="Primary navigation" class="fixed left-0 top-0 z-50 w-full px-4 py-4 sm:px-6">
   <div class="mx-auto max-w-6xl border border-cyan-300/15 bg-slate-950/75 px-4 py-3 backdrop-blur-md sm:px-5">
     <div class="flex items-center justify-between">
       <a href={homeHref} class="flex items-center gap-3 text-cyan-300">
-        <img src="/jpzen.svg" alt="" class="h-6 w-6" />
+        <img src="/jpzen.svg" alt="" width="24" height="24" class="h-6 w-6" />
         <span class="text-sm font-semibold tracking-[0.24em]">JPZEN</span>
       </a>
 
@@ -37,7 +37,7 @@ const logHref = isLog ? '#log' : '/log/';
       </div>
 
       <details class="relative xl:hidden">
-        <summary class="flex h-9 w-9 cursor-pointer list-none items-center justify-center border border-cyan-300/25 text-cyan-300 [&::-webkit-details-marker]:hidden">
+        <summary aria-label="Open primary navigation" class="flex h-9 w-9 cursor-pointer list-none items-center justify-center border border-cyan-300/25 text-cyan-300 [&::-webkit-details-marker]:hidden">
           <span class="sr-only">Open navigation</span>
           <span class="flex flex-col gap-1.5" aria-hidden="true"><span class="h-px w-4 bg-current"></span><span class="h-px w-4 bg-current"></span></span>
         </summary>
