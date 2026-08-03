@@ -11,6 +11,9 @@ export function getStaticPaths() {
 }
 
 const { project } = Astro.props;
+const statusSummary = project.status === 'ACTIVE'
+  ? 'This project is an active area of laboratory exploration. Its public status describes ongoing work, not live service availability.'
+  : 'This project is documented as planned. Its public status describes a future engineering direction, not an implemented system.';
 ---
 
 <Layout
@@ -23,7 +26,17 @@ const { project } = Astro.props;
   <section class="mx-auto mt-24 max-w-6xl px-6 md:mt-32">
     <div class="grid gap-8 border-t border-cyan-300/15 pt-8 md:grid-cols-[0.7fr_1.3fr] md:pt-10">
       <div>
-        <p class="font-mono text-xs tracking-[0.18em] text-cyan-300">TECHNOLOGIES</p>
+        <p class="font-mono text-xs tracking-[0.18em] text-cyan-300">PROJECT OVERVIEW</p>
+        <h2 class="mt-4 text-3xl font-semibold tracking-[-0.04em] text-white md:text-4xl">Engineering context.</h2>
+      </div>
+      <p class="max-w-2xl text-lg leading-8 text-slate-300">{project.description}</p>
+    </div>
+  </section>
+
+  <section class="mx-auto mt-24 max-w-6xl px-6 md:mt-32">
+    <div class="grid gap-8 border-t border-cyan-300/15 pt-8 md:grid-cols-[0.7fr_1.3fr] md:pt-10">
+      <div>
+        <p class="font-mono text-xs tracking-[0.18em] text-cyan-300">TECHNOLOGY STACK</p>
         <h2 class="mt-4 text-3xl font-semibold tracking-[-0.04em] text-white md:text-4xl">Public project vocabulary.</h2>
       </div>
       <p class="max-w-2xl text-base leading-7 text-slate-400">These terms describe the project’s public engineering scope. Configuration, access, and private implementation details remain outside this documentation.</p>
@@ -39,13 +52,23 @@ const { project } = Astro.props;
     </ul>
   </section>
 
-  <section class="mx-auto mt-24 max-w-6xl px-6 pb-20 md:mt-32 md:pb-28">
+  <section class="mx-auto mt-24 max-w-6xl px-6 md:mt-32">
     <div class="border-l border-cyan-300/45 pl-6 md:grid md:grid-cols-[0.7fr_1.3fr] md:gap-8 md:pl-8">
       <div>
-        <p class="font-mono text-xs tracking-[0.18em] text-cyan-300">PHILOSOPHY</p>
+        <p class="font-mono text-xs tracking-[0.18em] text-cyan-300">ENGINEERING PHILOSOPHY</p>
         <h2 class="mt-4 text-3xl font-semibold tracking-[-0.04em] text-white md:text-4xl">Documented through practice.</h2>
       </div>
       <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-300 md:mt-0">{project.philosophy}</p>
+    </div>
+  </section>
+
+  <section class="mx-auto mt-24 max-w-6xl px-6 pb-20 md:mt-32 md:pb-28">
+    <div class="border-t border-cyan-300/15 pt-8 md:grid md:grid-cols-[0.7fr_1.3fr] md:gap-8 md:pt-10">
+      <div>
+        <p class="font-mono text-xs tracking-[0.18em] text-cyan-300">CURRENT STATUS</p>
+        <h2 class="mt-4 text-3xl font-semibold tracking-[-0.04em] text-white md:text-4xl">{project.status}</h2>
+      </div>
+      <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-300 md:mt-0">{statusSummary}</p>
     </div>
   </section>
 </Layout>

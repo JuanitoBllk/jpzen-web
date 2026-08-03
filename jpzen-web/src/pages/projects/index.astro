@@ -2,6 +2,8 @@
 import Layout from '../../layouts/Layout.astro';
 import ProjectCard from '../../components/ProjectCard.astro';
 import { projects } from '../../data/projects.js';
+
+const categories = ['Infrastructure', 'Artificial Intelligence', 'Networking'];
 ---
 
 <Layout
@@ -15,11 +17,25 @@ import { projects } from '../../data/projects.js';
         <p class="font-mono text-xs tracking-[0.18em] text-cyan-300">PROJECT DOCUMENTATION</p>
         <h1 class="mt-4 text-5xl font-semibold tracking-[-0.05em] text-white md:text-6xl">Engineering archive.</h1>
       </div>
-      <p class="max-w-2xl text-base leading-7 text-slate-400">A public directory of experiments and projects from the JPZEN laboratory. Entries document purpose and learning without exposing private infrastructure.</p>
+      <p class="max-w-2xl text-base leading-7 text-slate-400">Documented experiments, systems and engineering paths developed inside JPZEN. Entries document purpose and learning without exposing private infrastructure.</p>
     </div>
 
-    <div class="mt-14 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-      {projects.map((project, index) => <ProjectCard project={project} index={index} />)}
+    <div class="mt-14 space-y-16">
+      {categories.map((category) => {
+        const categoryProjects = projects.filter((project) => project.category === category);
+
+        return (
+          <section>
+            <div class="flex items-center justify-between border-b border-cyan-300/15 pb-4">
+              <h2 class="text-xl font-semibold tracking-[-0.02em] text-white">{category}</h2>
+              <p class="font-mono text-xs tracking-[0.12em] text-slate-500">{categoryProjects.length.toString().padStart(2, '0')} RECORDS</p>
+            </div>
+            <div class="mt-8 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+              {categoryProjects.map((project, index) => <ProjectCard project={project} index={index} />)}
+            </div>
+          </section>
+        );
+      })}
     </div>
   </section>
 </Layout>
