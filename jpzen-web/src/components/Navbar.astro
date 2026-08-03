@@ -6,12 +6,14 @@ const isOrion = Astro.url.pathname === '/orion/' || Astro.url.pathname === '/ori
 const isLog = Astro.url.pathname === '/log/' || Astro.url.pathname === '/log';
 const isProjectsIndex = Astro.url.pathname === '/projects/' || Astro.url.pathname === '/projects';
 const isArticlesIndex = Astro.url.pathname === '/articles/' || Astro.url.pathname === '/articles';
+const isChangelog = Astro.url.pathname === '/changelog/' || Astro.url.pathname === '/changelog';
 const homeHref = isHome ? '#top' : '/';
 const atlasHref = isHome ? '#atlas' : isAtlas ? '#top' : '/atlas/';
 const novaHref = isHome ? '#nova' : isNova ? '#top' : '/nova/';
 const orionHref = isHome ? '#orion' : isOrion ? '#top' : '/orion/';
 const projectsHref = isProjectsIndex ? '#top' : '/projects/';
 const articlesHref = isArticlesIndex ? '#top' : '/articles/';
+const changelogHref = isChangelog ? '#top' : '/changelog/';
 const logHref = isLog ? '#log' : '/log/';
 ---
 
@@ -27,6 +29,7 @@ const logHref = isLog ? '#log' : '/log/';
         <a href={homeHref} class="transition hover:text-cyan-300">HOME</a>
         <a href={projectsHref} class="transition hover:text-cyan-300">PROJECTS</a>
         <a href={articlesHref} class="transition hover:text-cyan-300">ARTICLES</a>
+        <a href={changelogHref} class="transition hover:text-cyan-300">CHANGELOG</a>
         <a href={atlasHref} class="transition hover:text-cyan-300">ATLAS</a>
         <a href={novaHref} class="transition hover:text-cyan-300">NOVA</a>
         <a href={orionHref} class="transition hover:text-cyan-300">ORION</a>
@@ -42,6 +45,7 @@ const logHref = isLog ? '#log' : '/log/';
           <a href={homeHref} class="block px-3 py-3 font-mono text-xs tracking-[0.1em] text-slate-300 hover:bg-cyan-300/10 hover:text-cyan-300">HOME</a>
           <a href={projectsHref} class="block px-3 py-3 font-mono text-xs tracking-[0.1em] text-slate-300 hover:bg-cyan-300/10 hover:text-cyan-300">PROJECTS</a>
           <a href={articlesHref} class="block px-3 py-3 font-mono text-xs tracking-[0.1em] text-slate-300 hover:bg-cyan-300/10 hover:text-cyan-300">ARTICLES</a>
+          <a href={changelogHref} class="block px-3 py-3 font-mono text-xs tracking-[0.1em] text-slate-300 hover:bg-cyan-300/10 hover:text-cyan-300">CHANGELOG</a>
           <a href={atlasHref} class="block px-3 py-3 font-mono text-xs tracking-[0.1em] text-slate-300 hover:bg-cyan-300/10 hover:text-cyan-300">ATLAS</a>
           <a href={novaHref} class="block px-3 py-3 font-mono text-xs tracking-[0.1em] text-slate-300 hover:bg-cyan-300/10 hover:text-cyan-300">NOVA</a>
           <a href={orionHref} class="block px-3 py-3 font-mono text-xs tracking-[0.1em] text-slate-300 hover:bg-cyan-300/10 hover:text-cyan-300">ORION</a>

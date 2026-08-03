@@ -1,0 +1,35 @@
+---
+const { entry, index, isLast = false } = Astro.props;
+---
+
+<li class:list={['relative grid gap-4 py-7 pl-6 md:grid-cols-[8rem_1fr_auto] md:items-start md:gap-8', { 'border-b border-cyan-300/10': !isLast, 'is-planned': entry.status === 'PLANNED' }]}>
+  <span class="changelog-marker" aria-hidden="true"></span>
+  <p class:list={['font-mono text-xs', entry.status === 'PLANNED' ? 'text-slate-500' : 'text-cyan-300']}>{entry.date}</p>
+  <div>
+    <div class="flex flex-wrap items-baseline gap-x-3 gap-y-2">
+      <h2 class="text-xl font-semibold text-white">{entry.title}</h2>
+      <p class="font-mono text-xs tracking-[0.1em] text-cyan-300/80">{entry.category} / {entry.related}</p>
+    </div>
+    <p class="mt-3 max-w-xl text-sm leading-6 text-slate-400">{entry.description}</p>
+  </div>
+  <p class="font-mono text-xs tracking-[0.1em] text-slate-500">{entry.status}</p>
+</li>
+
+<style>
+  .changelog-marker {
+    position: absolute;
+    top: 2rem;
+    left: -5px;
+    width: 9px;
+    height: 9px;
+    border: 1px solid rgba(0, 229, 255, 0.72);
+    border-radius: 50%;
+    background: #05070d;
+    box-shadow: 0 0 0 5px rgba(5, 7, 13, 0.9);
+  }
+
+  .is-planned .changelog-marker {
+    border-style: dashed;
+    opacity: 0.7;
+  }
+</style>

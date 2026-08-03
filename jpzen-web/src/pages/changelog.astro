@@ -1,0 +1,25 @@
+---
+import ChangelogEntry from '../components/ChangelogEntry.astro';
+import { changelogEntries } from '../data/changelog.js';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="JPZEN | Engineering Changelog"
+  description="A public engineering changelog documenting the evolution of JPZEN experiments, documentation and milestones."
+  canonicalPath="/changelog/"
+>
+  <section id="top" class="mx-auto max-w-6xl px-6 pb-20 pt-32 md:pb-28 md:pt-40">
+    <div class="grid gap-8 border-t border-cyan-300/15 pt-8 md:grid-cols-[0.7fr_1.3fr] md:pt-10">
+      <div>
+        <p class="font-mono text-xs tracking-[0.18em] text-cyan-300">ENGINEERING CHANGELOG</p>
+        <h1 class="mt-4 text-5xl font-semibold tracking-[-0.05em] text-white md:text-6xl">Laboratory evolution.</h1>
+      </div>
+      <p class="max-w-2xl text-base leading-7 text-slate-400">A public record connecting experiments, documentation and validated milestones across the JPZEN laboratory.</p>
+    </div>
+
+    <ol class="mt-12 border-l border-cyan-300/20">
+      {changelogEntries.map((entry, index) => <ChangelogEntry entry={entry} index={index} isLast={index === changelogEntries.length - 1} />)}
+    </ol>
+  </section>
+</Layout>

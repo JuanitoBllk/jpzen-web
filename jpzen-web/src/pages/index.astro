@@ -24,6 +24,19 @@ import About from '../components/About.astro';
 
   <MissionLog />
 
+  <section class="mx-auto mt-24 max-w-6xl px-6 md:mt-32">
+    <div class="grid gap-6 border-t border-cyan-300/15 pt-8 md:grid-cols-[0.7fr_1.3fr] md:items-end md:pt-10">
+      <div>
+        <p class="font-mono text-xs tracking-[0.18em] text-cyan-300">ENGINEERING CHANGELOG</p>
+        <h2 class="mt-4 text-3xl font-semibold tracking-[-0.04em] text-white md:text-4xl">Follow the laboratory evolution.</h2>
+      </div>
+      <div>
+        <p class="max-w-2xl text-base leading-7 text-slate-400">Follow the evolution of the laboratory through documented milestones, experiments and public engineering records.</p>
+        <a href="/changelog/" class="mt-6 inline-flex font-mono text-xs tracking-[0.12em] text-cyan-300 transition hover:text-white">VIEW CHANGELOG</a>
+      </div>
+    </div>
+  </section>
+
   <About />
 
 </Layout>
