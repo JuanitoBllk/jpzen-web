@@ -1,0 +1,11 @@
+---
+import SystemTerminal from './SystemTerminal.astro';
+import { systems } from '../data/system.js';
+
+
+const activeSystem = systems[0];
+
+---
+
+
+<SystemTerminal system={activeSystem}/>
