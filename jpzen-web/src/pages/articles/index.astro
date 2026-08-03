@@ -1,0 +1,25 @@
+---
+import ArticleCard from '../../components/ArticleCard.astro';
+import { articles } from '../../data/articles.js';
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout
+  title="JPZEN | Technical Articles"
+  description="Public technical articles documenting JPZEN engineering knowledge, experiments and lessons learned."
+  canonicalPath="/articles/"
+>
+  <section id="top" class="mx-auto max-w-6xl px-6 pb-20 pt-32 md:pb-28 md:pt-40">
+    <div class="grid gap-8 border-t border-cyan-300/15 pt-8 md:grid-cols-[0.7fr_1.3fr] md:pt-10">
+      <div>
+        <p class="font-mono text-xs tracking-[0.18em] text-cyan-300">TECHNICAL ARTICLES</p>
+        <h1 class="mt-4 text-5xl font-semibold tracking-[-0.05em] text-white md:text-6xl">Engineering notes.</h1>
+      </div>
+      <p class="max-w-2xl text-base leading-7 text-slate-400">A public archive of engineering knowledge, experiments and lessons learned through the JPZEN laboratory.</p>
+    </div>
+
+    <div class="mt-14 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+      {articles.map((article, index) => <ArticleCard article={article} index={index} />)}
+    </div>
+  </section>
+</Layout>
