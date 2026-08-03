@@ -1,9 +1,10 @@
 ---
 import '../styles/global.css';
 import Navbar from '../components/Navbar.astro';
-import BootSequence from '../components/BootSequence.astro';
 
 const { title = "JPZEN" } = Astro.props;
+const description = "JPZEN is a personal technology laboratory for practical exploration in infrastructure, artificial intelligence, automation, and networking.";
+const canonicalUrl = new URL(Astro.url.pathname, "https://jpzen-web.pages.dev").href;
 ---
 
 <html lang="en">
@@ -14,6 +15,21 @@ const { title = "JPZEN" } = Astro.props;
 
 <meta name="viewport" content="width=device-width" />
 
+<meta name="description" content={description} />
+<link rel="canonical" href={canonicalUrl} />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="JPZEN" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonicalUrl} />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
 <link rel="icon" href="/jpzen-favicon.svg" />
 
 <title>{title}</title>
@@ -21,16 +37,19 @@ const { title = "JPZEN" } = Astro.props;
 </head>
 
 
- <body>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <BootSequence />
+   <Navbar />
 
-  <Navbar />
-
-  <slot />
+   <main id="main-content">
+     <slot />
+   </main>
 
 
   <script>
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     document.querySelectorAll('a[href^="#"]').forEach(link => {
 
@@ -38,9 +57,8 @@ const { title = "JPZEN" } = Astro.props;
 
         event.preventDefault();
 
-        const target = document.querySelector(
-          link.getAttribute('href')
-        );
+        const href = link.getAttribute('href');
+        const target = href ? document.querySelector(href) : null;
 
         if (target) {
 
@@ -56,9 +74,16 @@ const { title = "JPZEN" } = Astro.props;
 
             top: targetPosition,
 
-            behavior: "smooth"
+            behavior: prefersReducedMotion ? "auto" : "smooth"
 
           });
+
+          target.setAttribute('tabindex', '-1');
+          target.focus({ preventScroll: true });
+
+          if (href) {
+            window.history.pushState(null, '', href);
+          }
 
         }
 

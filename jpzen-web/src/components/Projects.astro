@@ -1,34 +1,28 @@
 ---
-import ProjectCard from './ProjectCard.astro';
 import { systems } from '../data/system.js';
 ---
 
-<section id="projects" class="mt-24 max-w-5xl mx-auto px-6">
-
-  <h2 class="text-3xl tracking-widest text-center mb-12">
-    PROJECTS
-  </h2>
-
-
-  <div class="grid md:grid-cols-3 gap-6">
-
-
-    {
-      systems.map((system) => (
-
-<ProjectCard
- name={system.name}
- category={system.category}
- description={system.description}
- systems={system.systems}
- status={system.status}
- details={system.details}
-/>
-
-      ))
-    }
-
-
+<section id="projects" class="mx-auto mt-24 max-w-6xl px-6 md:mt-32">
+  <div class="grid gap-8 border-t border-cyan-300/15 pt-8 md:grid-cols-[0.7fr_1.3fr] md:pt-10">
+    <div>
+      <p class="font-mono text-xs tracking-[0.18em] text-cyan-300">CORE SYSTEMS / 03</p>
+      <h2 class="mt-4 text-3xl font-semibold tracking-[-0.04em] text-white md:text-4xl">Three paths of practical exploration.</h2>
+    </div>
+    <p class="max-w-2xl text-base leading-7 text-slate-400">
+      JPZEN is organized around a stable foundation, active experimentation, and intentional future work. Each core records a different stage of the laboratory.
+    </p>
   </div>
 
+  <div class="mt-10 border-y border-cyan-300/15">
+    {systems.map((system, index) => (
+      <a href={`#${system.id}`} class="group grid gap-4 border-b border-cyan-300/10 py-6 last:border-b-0 md:grid-cols-[4rem_1fr_auto] md:items-center md:gap-8">
+        <span class="font-mono text-xs text-cyan-300">0{index + 1}</span>
+        <span>
+          <span class="block text-2xl font-semibold tracking-[0.08em] text-white transition group-hover:text-cyan-300">{system.name}</span>
+          <span class="mt-1 block text-sm text-slate-500">{system.category}</span>
+        </span>
+        <span class="font-mono text-xs tracking-[0.1em] text-slate-400 transition group-hover:text-cyan-300">{system.status}</span>
+      </a>
+    ))}
+  </div>
 </section>

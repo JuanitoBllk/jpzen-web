@@ -1,10 +1,6 @@
 ---
 import SystemTerminal from './SystemTerminal.astro';
 import { systems } from '../data/system.js';
-
-console.log(systems);
-
-const activeSystem = systems[0];
 ---
 
-<SystemTerminal system={activeSystem}/>
+{systems.map((system, index) => <SystemTerminal system={system} index={index} />)}

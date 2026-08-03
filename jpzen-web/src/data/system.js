@@ -1,5 +1,4 @@
-console.log("SYSTEMS LOADED");
- const systems = [
+const systems = [
 
   {
     id: "atlas",
@@ -7,33 +6,20 @@ console.log("SYSTEMS LOADED");
     name: "ATLAS",
 
     category: "Infrastructure Core",
-    health:100,
-
     description:
       "The foundation layer where systems are built, tested and maintained.",
 
-    status: "● OPERATIONAL",
+    status: "IMPLEMENTED FOUNDATION",
 
     systems: [
-      "Proxmox VE",
-      "Linux Containers",
-      "Docker Runtime",
-      "Self-hosted Services"
+      "Virtualization",
+      "Container Platforms",
+      "Self-hosted Experimentation",
+      "System Foundations"
     ],
 
-    details: {
-      host: "pve1",
-
-      platform: "Proxmox VE",
-
-      virtualization: "LXC + Docker",
-
-      services: [
-        "AdGuard",
-        "Nginx Proxy Manager",
-        "OpenClaw"
-      ]
-    }
+    focusLabel: "CURRENT FOCUS",
+    focus: "Maintaining a dependable private foundation for practical experiments and future systems."
   },
 
 
@@ -43,28 +29,20 @@ console.log("SYSTEMS LOADED");
     name: "NOVA",
 
     category: "AI & Automation Core",
-    health: 80,
-
     description:
       "Exploring intelligent systems, agents and automation workflows.",
 
-    status: "● OPERATIONAL",
+    status: "ACTIVE EXPERIMENTATION",
 
     systems: [
-      "OpenClaw",
       "AI Agents",
       "Automation Workflows",
-      "Experimental Systems"
+      "Experimental Systems",
+      "Applied Research"
     ],
 
-    details: {
-      runtime: "Docker",
-
-      platform: "OpenClaw",
-
-      purpose:
-        "AI automation experiments"
-    }
+    focusLabel: "CURRENT FOCUS",
+    focus: "Exploring useful AI-assisted workflows through small, testable automation experiments."
   },
 
 
@@ -72,14 +50,12 @@ console.log("SYSTEMS LOADED");
     id: "orion",
 
     name: "ORION",
-    health: 40,
-
     category: "Network & Connectivity Core",
 
     description:
       "Designing a smarter and more secure connectivity environment.",
 
-    status: "○ DEVELOPMENT",
+    status: "PLANNED EVOLUTION",
 
     systems: [
       "DNS Architecture",
@@ -88,17 +64,8 @@ console.log("SYSTEMS LOADED");
       "Wireless Infrastructure"
     ],
 
-    details: {
-
-      current:
-        "Home Network",
-
-      planned: [
-        "VLAN",
-        "Firewall",
-        "Managed Wireless"
-      ]
-    }
+    focusLabel: "TRAJECTORY",
+    focus: "Designing a more deliberate connectivity environment through staged, evidence-based improvements."
   }
 
 ];

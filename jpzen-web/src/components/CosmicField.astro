@@ -1,0 +1,361 @@
+<div class="cosmic-field" aria-hidden="true">
+  <div class="nebula nebula-primary"></div>
+  <div class="nebula nebula-secondary"></div>
+  <div class="galactic-band band-primary"></div>
+  <div class="galactic-band band-secondary"></div>
+  <div class="dust-field dust-north"></div>
+  <div class="dust-field dust-south"></div>
+  <div class="star-cluster cluster-west"></div>
+  <div class="star-cluster cluster-east"></div>
+  <div class="star-cluster cluster-distant"></div>
+  <div class="star-field star-field-deep"></div>
+  <div class="star-field star-field-near"></div>
+  <div class="star-field star-field-far"></div>
+  <div class="star-field star-field-foreground"></div>
+
+  <svg class="cosmic-geometry" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g class="constellation">
+      <path d="M682 158C734 183 774 212 810 248C802 304 776 358 745 404" />
+      <path d="M745 404C796 450 852 492 900 520C948 490 995 450 1035 410" />
+      <path d="M745 404C704 448 660 490 620 520C574 508 530 486 490 462" />
+      <circle cx="682" cy="158" r="3" />
+      <circle cx="810" cy="248" r="4" />
+      <circle cx="745" cy="404" r="3" />
+      <circle cx="900" cy="520" r="3" />
+      <circle cx="1035" cy="410" r="2.5" />
+      <circle cx="620" cy="520" r="2.5" />
+      <circle cx="490" cy="462" r="2" />
+    </g>
+
+    <g class="routes">
+      <path d="M438 262C548 212 634 248 682 158" />
+      <path d="M810 248C908 220 990 284 1035 410" />
+      <path d="M490 462C548 416 680 434 745 404" />
+      <path d="M900 520C954 564 1032 558 1090 510" />
+      <path d="M620 520C660 602 776 638 872 602" />
+    </g>
+
+    <g class="deep-map">
+      <path d="M96 694C246 554 418 518 592 588C702 632 812 664 948 704" />
+      <path d="M694 44C848 68 1048 154 1180 308" />
+      <path d="M932 714C1034 638 1124 600 1216 578" />
+      <path d="M496 122C620 182 680 258 704 352C724 432 750 506 840 578" />
+    </g>
+
+    <g class="points-of-interest">
+      <circle cx="438" cy="262" r="3" />
+      <circle cx="490" cy="462" r="4" />
+      <circle cx="872" cy="602" r="4" />
+      <circle cx="1090" cy="510" r="3" />
+      <circle cx="438" cy="262" r="10" />
+      <circle cx="872" cy="602" r="13" />
+      <circle cx="1090" cy="510" r="10" />
+    </g>
+
+    <g class="orbits">
+      <path d="M568 555C673 694 969 700 1110 491" />
+      <path d="M614 176C723 71 939 59 1079 166" />
+      <circle cx="745" cy="404" r="8" />
+      <circle cx="1035" cy="410" r="5" />
+    </g>
+
+    <g class="central-context">
+      <path d="M708 338C756 302 830 296 892 326" />
+      <path d="M724 454C780 488 860 486 920 440" />
+      <circle cx="708" cy="338" r="2" />
+      <circle cx="920" cy="440" r="2" />
+      <circle cx="686" cy="482" r="1.5" />
+      <circle cx="954" cy="278" r="1.5" />
+    </g>
+
+    <g class="stars">
+      <circle cx="104" cy="136" r="1.5" />
+      <circle cx="236" cy="302" r="1" />
+      <circle cx="392" cy="112" r="1.5" />
+      <circle cx="514" cy="682" r="1" />
+      <circle cx="1110" cy="188" r="1.5" />
+      <circle cx="1070" cy="674" r="1" />
+      <circle cx="388" cy="576" r="1" />
+    </g>
+  </svg>
+</div>
+
+<style>
+  .cosmic-field {
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 76% 42%, rgba(13, 48, 80, 0.22), transparent 31%),
+      linear-gradient(118deg, #05070d 10%, #07101d 58%, #05070d 100%);
+  }
+
+  .nebula {
+    position: absolute;
+    border-radius: 999px;
+    filter: blur(58px);
+  }
+
+  .nebula-primary {
+    top: 2%;
+    right: 4%;
+    width: 46rem;
+    height: 30rem;
+    background: radial-gradient(ellipse, rgba(0, 133, 168, 0.14), rgba(0, 42, 76, 0.08) 42%, transparent 70%);
+  }
+
+  .nebula-secondary {
+    bottom: -18rem;
+    left: 16%;
+    width: 36rem;
+    height: 26rem;
+    background: radial-gradient(ellipse, rgba(37, 99, 235, 0.08), transparent 68%);
+  }
+
+  .dust-field {
+    position: absolute;
+    width: 34rem;
+    height: 12rem;
+    opacity: 0.45;
+    filter: blur(18px);
+    background:
+      radial-gradient(ellipse at 16% 56%, rgba(141, 209, 230, 0.08), transparent 8%),
+      radial-gradient(ellipse at 38% 46%, rgba(0, 229, 255, 0.06), transparent 11%),
+      radial-gradient(ellipse at 61% 58%, rgba(141, 209, 230, 0.06), transparent 9%),
+      radial-gradient(ellipse at 84% 36%, rgba(0, 229, 255, 0.05), transparent 8%);
+  }
+
+  .dust-north {
+    top: 12%;
+    right: 10%;
+    transform: rotate(-18deg);
+  }
+
+  .dust-south {
+    bottom: 10%;
+    left: 18%;
+    transform: rotate(14deg) scale(0.82);
+  }
+
+  .galactic-band {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(36px);
+    opacity: 0.72;
+  }
+
+  .band-primary {
+    top: 8%;
+    right: -20rem;
+    width: 70rem;
+    height: 18rem;
+    transform: rotate(-24deg);
+    background: radial-gradient(ellipse, transparent 42%, rgba(37, 99, 235, 0.08) 54%, rgba(0, 229, 255, 0.05) 58%, transparent 70%);
+  }
+
+  .band-secondary {
+    bottom: -6rem;
+    left: -30rem;
+    width: 60rem;
+    height: 16rem;
+    transform: rotate(18deg);
+    background: radial-gradient(ellipse, transparent 46%, rgba(0, 119, 165, 0.08) 57%, transparent 70%);
+  }
+
+  .star-cluster {
+    position: absolute;
+    width: 16rem;
+    height: 10rem;
+    opacity: 0.48;
+    background:
+      radial-gradient(circle at 12% 42%, rgba(226, 245, 255, 0.48) 0 1px, transparent 1.5px),
+      radial-gradient(circle at 34% 18%, rgba(0, 229, 255, 0.45) 0 1px, transparent 1.5px),
+      radial-gradient(circle at 52% 62%, rgba(226, 245, 255, 0.36) 0 1px, transparent 1.5px),
+      radial-gradient(circle at 74% 28%, rgba(226, 245, 255, 0.4) 0 1px, transparent 1.5px),
+      radial-gradient(circle at 88% 74%, rgba(0, 229, 255, 0.3) 0 1px, transparent 1.5px);
+  }
+
+  .cluster-west {
+    top: 24%;
+    left: 4%;
+    transform: rotate(-12deg);
+  }
+
+  .cluster-east {
+    right: 3%;
+    bottom: 8%;
+    transform: rotate(18deg) scale(0.85);
+  }
+
+  .cluster-distant {
+    top: 8%;
+    left: 38%;
+    transform: scale(0.68) rotate(9deg);
+    opacity: 0.3;
+  }
+
+  .star-field {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background: rgba(226, 245, 255, 0.6);
+  }
+
+  .star-field-near {
+    top: 14%;
+    left: 8%;
+    box-shadow:
+      52px 98px rgba(226, 245, 255, 0.45),
+      146px 22px rgba(0, 229, 255, 0.65),
+      230px 162px rgba(226, 245, 255, 0.5),
+      346px 54px rgba(226, 245, 255, 0.35),
+      412px 225px rgba(0, 229, 255, 0.45),
+      562px 82px rgba(226, 245, 255, 0.35),
+      694px 268px rgba(226, 245, 255, 0.35),
+      812px 30px rgba(0, 229, 255, 0.4),
+      940px 184px rgba(226, 245, 255, 0.45),
+      1070px 96px rgba(226, 245, 255, 0.35);
+  }
+
+  .star-field-deep {
+    top: 8%;
+    left: 2%;
+    width: 1px;
+    height: 1px;
+    opacity: 0.5;
+    box-shadow:
+      28px 42px rgba(226, 245, 255, 0.35),
+      96px 244px rgba(226, 245, 255, 0.24),
+      170px 128px rgba(226, 245, 255, 0.25),
+      252px 332px rgba(226, 245, 255, 0.22),
+      334px 214px rgba(226, 245, 255, 0.25),
+      418px 36px rgba(226, 245, 255, 0.22),
+      498px 296px rgba(226, 245, 255, 0.2),
+      580px 146px rgba(226, 245, 255, 0.28),
+      668px 336px rgba(226, 245, 255, 0.22),
+      742px 118px rgba(226, 245, 255, 0.2),
+      826px 292px rgba(226, 245, 255, 0.25),
+      906px 74px rgba(226, 245, 255, 0.25),
+      988px 328px rgba(226, 245, 255, 0.2),
+      1080px 238px rgba(226, 245, 255, 0.24),
+      1152px 58px rgba(226, 245, 255, 0.22);
+  }
+
+  .star-field-far {
+    top: 48%;
+    left: 3%;
+    opacity: 0.55;
+    box-shadow:
+      76px 146px rgba(226, 245, 255, 0.4),
+      188px 24px rgba(226, 245, 255, 0.35),
+      312px 186px rgba(0, 229, 255, 0.35),
+      452px 66px rgba(226, 245, 255, 0.35),
+      622px 154px rgba(226, 245, 255, 0.3),
+      760px 44px rgba(226, 245, 255, 0.35),
+      894px 208px rgba(0, 229, 255, 0.3),
+      1032px 122px rgba(226, 245, 255, 0.4);
+  }
+
+  .star-field-foreground {
+    top: 23%;
+    left: 16%;
+    width: 3px;
+    height: 3px;
+    opacity: 0.72;
+    background: rgba(226, 245, 255, 0.7);
+    box-shadow:
+      128px 118px rgba(0, 229, 255, 0.58),
+      372px 48px rgba(226, 245, 255, 0.55),
+      658px 194px rgba(226, 245, 255, 0.5),
+      884px 88px rgba(0, 229, 255, 0.46),
+      1020px 266px rgba(226, 245, 255, 0.48);
+  }
+
+  .cosmic-geometry {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: min(100%, 82rem);
+    height: 100%;
+    opacity: 0.68;
+  }
+
+  .constellation path {
+    stroke: rgba(171, 239, 255, 0.22);
+    stroke-width: 1;
+  }
+
+  .constellation circle {
+    fill: #aef3ff;
+    opacity: 0.58;
+  }
+
+  .routes path {
+    stroke: rgba(0, 229, 255, 0.12);
+    stroke-width: 1;
+  }
+
+  .deep-map path,
+  .central-context path {
+    stroke: rgba(112, 190, 220, 0.08);
+    stroke-width: 1;
+  }
+
+  .central-context circle {
+    fill: rgba(174, 243, 255, 0.42);
+  }
+
+  .points-of-interest circle:nth-child(-n + 4) {
+    fill: rgba(174, 243, 255, 0.72);
+  }
+
+  .points-of-interest circle:nth-child(n + 5) {
+    stroke: rgba(0, 229, 255, 0.15);
+    stroke-width: 1;
+  }
+
+  .orbits ellipse,
+  .orbits path,
+  .orbits circle {
+    stroke: rgba(0, 229, 255, 0.18);
+    stroke-width: 1;
+  }
+
+  .orbits circle:first-of-type {
+    fill: rgba(0, 229, 255, 0.18);
+  }
+
+  .stars circle {
+    fill: rgba(226, 245, 255, 0.45);
+  }
+
+  @media (max-width: 1023px) {
+    .cosmic-geometry {
+      width: 100%;
+      opacity: 0.4;
+    }
+
+    .nebula-primary {
+      right: -18rem;
+    }
+
+    .cluster-west {
+      left: -6rem;
+    }
+
+    .cluster-east {
+      right: -7rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cosmic-field,
+    .cosmic-field * {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+</style>

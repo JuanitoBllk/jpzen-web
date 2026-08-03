@@ -1,91 +1,83 @@
-<section id="missions" class="mt-32 max-w-4xl mx-auto px-6">
-
-  <h2 class="text-3xl tracking-widest text-center mb-12">
-    MISSION LOG
-  </h2>
-
-
-  <div class="space-y-8">
-
-
-    <div class="border-l border-cyan-400/40 pl-6">
-
-      <p class="text-cyan-400 text-sm">
-        2026.08
-      </p>
-
-      <h3 class="text-xl font-bold mt-2">
-        HOMELAB INITIALIZED
-      </h3>
-
-      <p class="text-gray-400 mt-2">
-        Building the foundation for experimentation.
-      </p>
-
-      <p class="text-gray-500 mt-3">
-        ✓ Proxmox
-        <br />
-        ✓ Linux
-        <br />
-        ✓ Docker
-      </p>
-
+<section id="missions" class="field-notes mx-auto mt-28 max-w-6xl px-6 md:mt-32">
+  <div class="field-notes-header grid gap-8 border-t border-cyan-300/15 pt-8 md:grid-cols-[0.7fr_1.3fr] md:pt-10">
+    <div>
+      <p class="font-mono text-xs tracking-[0.18em] text-cyan-300">FIELD NOTES</p>
+      <h2 class="mt-4 text-3xl font-semibold tracking-[-0.04em] text-white md:text-4xl">The laboratory is built in chapters.</h2>
     </div>
-
-
-
-    <div class="border-l border-cyan-400/40 pl-6">
-
-      <p class="text-cyan-400 text-sm">
-        2026.08
-      </p>
-
-      <h3 class="text-xl font-bold mt-2">
-        AI SYSTEM DEPLOYED
-      </h3>
-
-      <p class="text-gray-400 mt-2">
-        Integrating intelligent systems and automation.
-      </p>
-
-      <p class="text-gray-500 mt-3">
-        ✓ OpenClaw
-        <br />
-        ✓ AI Agents
-        <br />
-        ✓ Automation
-      </p>
-
-    </div>
-
-
-
-    <div class="border-l border-cyan-400/40 pl-6">
-
-      <p class="text-cyan-400 text-sm">
-        FUTURE
-      </p>
-
-      <h3 class="text-xl font-bold mt-2">
-        NETWORK EXPANSION
-      </h3>
-
-      <p class="text-gray-400 mt-2">
-        Designing the next generation of connectivity.
-      </p>
-
-      <p class="text-gray-500 mt-3">
-        ○ VLAN
-        <br />
-        ○ Firewall
-        <br />
-        ○ WiFi Infrastructure
-      </p>
-
-    </div>
-
-
+    <p class="max-w-2xl text-base leading-7 text-slate-400">A concise record of implemented work and the next deliberate direction. Planned work remains clearly marked until it becomes real.</p>
   </div>
 
-
+  <ol class="field-notes-list mt-10 border-l border-cyan-300/20">
+    <li class="field-note grid gap-4 border-b border-cyan-300/10 py-6 pl-6 md:grid-cols-[8rem_1fr_auto] md:items-start md:gap-8">
+      <p class="font-mono text-xs text-cyan-300">2026.08</p>
+      <div>
+        <h3 class="text-xl font-semibold text-white">FOUNDATION ESTABLISHED</h3>
+        <p class="mt-2 max-w-xl text-sm leading-6 text-slate-400">The first private foundation for hands-on infrastructure experimentation was put in place.</p>
+      </div>
+      <p class="font-mono text-xs tracking-[0.1em] text-slate-500">IMPLEMENTED</p>
+    </li>
+    <li class="field-note grid gap-4 border-b border-cyan-300/10 py-6 pl-6 md:grid-cols-[8rem_1fr_auto] md:items-start md:gap-8">
+      <p class="font-mono text-xs text-cyan-300">2026.08</p>
+      <div>
+        <h3 class="text-xl font-semibold text-white">AUTOMATION EXPLORATION BEGINS</h3>
+        <p class="mt-2 max-w-xl text-sm leading-6 text-slate-400">AI-assisted workflows and agent experiments became part of the laboratory’s practical research path.</p>
+      </div>
+      <p class="font-mono text-xs tracking-[0.1em] text-slate-500">IMPLEMENTED</p>
+    </li>
+    <li class="field-note grid gap-4 py-6 pl-6 md:grid-cols-[8rem_1fr_auto] md:items-start md:gap-8">
+      <p class="font-mono text-xs text-slate-500">NEXT</p>
+      <div>
+        <h3 class="text-xl font-semibold text-white">CONNECTIVITY EVOLUTION</h3>
+        <p class="mt-2 max-w-xl text-sm leading-6 text-slate-400">Network segmentation, security boundaries, and managed connectivity form the next planned chapter.</p>
+      </div>
+      <p class="font-mono text-xs tracking-[0.1em] text-slate-500">PLANNED</p>
+    </li>
+  </ol>
 </section>
+
+<style>
+  .field-notes {
+    position: relative;
+  }
+
+  .field-notes-header {
+    position: relative;
+  }
+
+  .field-notes-header::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: min(40%, 22rem);
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(0, 229, 255, 0.4), transparent);
+  }
+
+  .field-notes-list {
+    position: relative;
+    background: linear-gradient(90deg, rgba(0, 229, 255, 0.025), transparent 42%);
+  }
+
+  .field-note {
+    position: relative;
+  }
+
+  .field-note::before {
+    content: "";
+    position: absolute;
+    top: 2rem;
+    left: -5px;
+    width: 9px;
+    height: 9px;
+    border: 1px solid rgba(0, 229, 255, 0.72);
+    border-radius: 50%;
+    background: #05070d;
+    box-shadow: 0 0 0 5px rgba(5, 7, 13, 0.9);
+  }
+
+  .field-note:last-child::before {
+    border-style: dashed;
+    opacity: 0.7;
+  }
+</style>
