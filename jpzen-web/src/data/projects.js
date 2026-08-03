@@ -8,7 +8,12 @@ const projects = [
     route: '/projects/private-infrastructure-lab/',
     description: 'A personal infrastructure environment used to explore virtualization, container platforms and self-hosted experimentation.',
     technologies: ['Virtualization', 'Containers', 'Linux'],
-    philosophy: 'A dependable private foundation makes it possible to test ideas deliberately before they become larger systems.'
+    philosophy: 'A dependable private foundation makes it possible to test ideas deliberately before they become larger systems.',
+    objective: 'Develop practical understanding of the foundations that support reliable laboratory systems.',
+    approach: 'Work in controlled environments, document decisions and improve one system at a time.',
+    experimentAreas: ['Virtualization Concepts', 'Container Platforms', 'Linux Systems', 'Self-hosted Experimentation'],
+    lessons: 'Reliable foundations are built through careful observation, repeatable work and documented learning.',
+    future: 'Continue refining infrastructure knowledge through focused, public-safe engineering records.'
   },
   {
     slug: 'ai-automation-experiments',
@@ -19,7 +24,12 @@ const projects = [
     route: '/projects/ai-automation-experiments/',
     description: 'Experiments with intelligent workflows, automation systems and AI-assisted processes.',
     technologies: ['AI Agents', 'Automation', 'Workflows'],
-    philosophy: 'Small, testable iterations help turn promising ideas into practical automation systems.'
+    philosophy: 'Small, testable iterations help turn promising ideas into practical automation systems.',
+    objective: 'Explore how AI-assisted workflows can become useful tools through practical experimentation.',
+    approach: 'Start with focused experiments, evaluate results and record what improves each workflow.',
+    experimentAreas: ['AI Agents', 'Automation Workflows', 'Experimental Systems', 'AI-assisted Processes'],
+    lessons: 'Useful automation depends on understanding the task, its limits and opportunities to improve.',
+    future: 'Continue exploring responsible automation patterns and practical workflow integrations.'
   },
   {
     slug: 'network-evolution',
@@ -30,7 +40,12 @@ const projects = [
     route: '/projects/network-evolution/',
     description: 'Future connectivity improvements focused on architecture, segmentation and security.',
     technologies: ['DNS', 'VLAN', 'Firewall Concepts'],
-    philosophy: 'Connectivity evolves through understanding, staged design, and security-conscious decisions.'
+    philosophy: 'Connectivity evolves through understanding, staged design, and security-conscious decisions.',
+    objective: 'Build a stronger understanding of network architecture, segmentation and security concepts.',
+    approach: 'Study concepts progressively, plan improvements carefully and validate lessons before advancing.',
+    experimentAreas: ['DNS Architecture', 'Network Concepts', 'Segmentation Concepts', 'Security Fundamentals'],
+    lessons: 'Reliable connectivity improves through deliberate design, measurement and incremental change.',
+    future: 'Continue documenting public-safe networking concepts and staged connectivity practices.'
   },
   {
     slug: 'openclaw',
