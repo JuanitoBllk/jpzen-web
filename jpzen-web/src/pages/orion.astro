@@ -1,0 +1,48 @@
+---
+import CorePageHero from '../components/CorePageHero.astro';
+import SystemCard from '../components/SystemCard.astro';
+import { orion } from '../data/orion.js';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="ORION | JPZEN"
+  description="ORION is the planned network and connectivity evolution core of the JPZEN personal technology laboratory."
+  canonicalPath="/orion"
+>
+  <CorePageHero core={orion} />
+
+  <section class="mx-auto mt-24 max-w-6xl px-6 md:mt-32">
+    <div class="grid gap-8 border-t border-dashed border-cyan-300/20 pt-8 md:grid-cols-[0.7fr_1.3fr] md:pt-10">
+      <div>
+        <p class="font-mono text-xs tracking-[0.18em] text-cyan-300">ROADMAP</p>
+        <h2 class="mt-4 text-3xl font-semibold tracking-[-0.04em] text-white md:text-4xl">A staged path to deliberate connectivity.</h2>
+      </div>
+      <p class="max-w-2xl text-base leading-7 text-slate-400">These phases describe planned public directions. They are not operational network details or public infrastructure endpoints.</p>
+    </div>
+
+    <div class="mt-12 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+      {orion.roadmap.map((phase, index) => <SystemCard system={phase} index={index} />)}
+    </div>
+  </section>
+
+  <section class="mx-auto mt-24 max-w-6xl px-6 md:mt-32">
+    <div class="border-l border-dashed border-cyan-300/45 pl-6 md:grid md:grid-cols-[0.7fr_1.3fr] md:gap-8 md:pl-8">
+      <div>
+        <p class="font-mono text-xs tracking-[0.18em] text-cyan-300">CURRENT TRAJECTORY</p>
+        <h2 class="mt-4 text-3xl font-semibold tracking-[-0.04em] text-white md:text-4xl">Future work, informed by evidence.</h2>
+      </div>
+      <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-300 md:mt-0">ORION represents future connectivity improvements through staged, evidence-based evolution. Each phase is approached only after the previous foundation is understood and validated.</p>
+    </div>
+  </section>
+
+  <section class="mx-auto mt-24 max-w-6xl px-6 pb-20 md:mt-32 md:pb-28">
+    <div class="border-t border-dashed border-cyan-300/20 pt-8 md:grid md:grid-cols-[0.7fr_1.3fr] md:gap-8 md:pt-10">
+      <div>
+        <p class="font-mono text-xs tracking-[0.18em] text-cyan-300">PHILOSOPHY</p>
+        <h2 class="mt-4 text-3xl font-semibold tracking-[-0.04em] text-white md:text-4xl">Connectivity begins with deliberate design.</h2>
+      </div>
+      <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-300 md:mt-0">Networking improvements are approached through understanding, segmentation, security, and deliberate design. ORION values clear foundations over rushed complexity.</p>
+    </div>
+  </section>
+</Layout>
