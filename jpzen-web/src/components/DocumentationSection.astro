@@ -1,0 +1,36 @@
+---
+const {
+  label,
+  title,
+  content,
+  items = []
+} = Astro.props;
+
+const hasContent = Boolean(content) || items.length > 0;
+---
+
+{hasContent && (
+  <section class="mx-auto mt-24 max-w-6xl px-6 md:mt-32">
+    <div class="grid gap-8 border-t border-cyan-300/15 pt-8 md:grid-cols-[0.7fr_1.3fr] md:pt-10">
+      <div>
+        <p class="font-mono text-xs tracking-[0.18em] text-cyan-300">{label}</p>
+        <h2 class="mt-4 text-3xl font-semibold tracking-[-0.04em] text-white md:text-4xl">{title}</h2>
+      </div>
+
+      <div class="max-w-2xl">
+        {content && <p class="text-lg leading-8 text-slate-300">{content}</p>}
+
+        {items.length > 0 && (
+          <ul class:list={['grid gap-0 border-y border-cyan-300/15', { 'mt-8': content }, 'sm:grid-cols-3']}>
+            {items.map((item, index) => (
+              <li class="border-b border-cyan-300/15 py-5 sm:border-b-0 sm:px-6 sm:first:pl-0 sm:[&:not(:last-child)]:border-r sm:[&:not(:last-child)]:border-cyan-300/15">
+                <p class="font-mono text-xs text-cyan-300">0{index + 1}</p>
+                <p class="mt-3 text-sm text-slate-300">{item}</p>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+    </div>
+  </section>
+)}

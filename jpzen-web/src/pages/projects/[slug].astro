@@ -1,4 +1,5 @@
 ---
+import DocumentationSection from '../../components/DocumentationSection.astro';
 import Layout from '../../layouts/Layout.astro';
 import ProjectPageHero from '../../components/ProjectPageHero.astro';
 import { projects } from '../../data/projects.js';
@@ -11,9 +12,6 @@ export function getStaticPaths() {
 }
 
 const { project } = Astro.props;
-const statusSummary = project.status === 'ACTIVE'
-  ? 'This project is an active area of laboratory exploration. Its public status describes ongoing work, not live service availability.'
-  : 'This project is documented as planned. Its public status describes a future engineering direction, not an implemented system.';
 ---
 
 <Layout
@@ -23,52 +21,13 @@ const statusSummary = project.status === 'ACTIVE'
 >
   <ProjectPageHero project={project} />
 
-  <section class="mx-auto mt-24 max-w-6xl px-6 md:mt-32">
-    <div class="grid gap-8 border-t border-cyan-300/15 pt-8 md:grid-cols-[0.7fr_1.3fr] md:pt-10">
-      <div>
-        <p class="font-mono text-xs tracking-[0.18em] text-cyan-300">PROJECT OVERVIEW</p>
-        <h2 class="mt-4 text-3xl font-semibold tracking-[-0.04em] text-white md:text-4xl">Engineering context.</h2>
-      </div>
-      <p class="max-w-2xl text-lg leading-8 text-slate-300">{project.description}</p>
-    </div>
-  </section>
-
-  <section class="mx-auto mt-24 max-w-6xl px-6 md:mt-32">
-    <div class="grid gap-8 border-t border-cyan-300/15 pt-8 md:grid-cols-[0.7fr_1.3fr] md:pt-10">
-      <div>
-        <p class="font-mono text-xs tracking-[0.18em] text-cyan-300">TECHNOLOGY STACK</p>
-        <h2 class="mt-4 text-3xl font-semibold tracking-[-0.04em] text-white md:text-4xl">Public project vocabulary.</h2>
-      </div>
-      <p class="max-w-2xl text-base leading-7 text-slate-400">These terms describe the project’s public engineering scope. Configuration, access, and private implementation details remain outside this documentation.</p>
-    </div>
-
-    <ul class="mt-10 grid gap-0 border-y border-cyan-300/15 sm:grid-cols-3">
-      {project.technologies.map((technology, index) => (
-        <li class="border-b border-cyan-300/15 py-5 sm:border-b-0 sm:px-6 sm:first:pl-0 sm:[&:not(:last-child)]:border-r sm:[&:not(:last-child)]:border-cyan-300/15">
-          <p class="font-mono text-xs text-cyan-300">0{index + 1}</p>
-          <p class="mt-3 text-sm text-slate-300">{technology}</p>
-        </li>
-      ))}
-    </ul>
-  </section>
-
-  <section class="mx-auto mt-24 max-w-6xl px-6 md:mt-32">
-    <div class="border-l border-cyan-300/45 pl-6 md:grid md:grid-cols-[0.7fr_1.3fr] md:gap-8 md:pl-8">
-      <div>
-        <p class="font-mono text-xs tracking-[0.18em] text-cyan-300">ENGINEERING PHILOSOPHY</p>
-        <h2 class="mt-4 text-3xl font-semibold tracking-[-0.04em] text-white md:text-4xl">Documented through practice.</h2>
-      </div>
-      <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-300 md:mt-0">{project.philosophy}</p>
-    </div>
-  </section>
-
-  <section class="mx-auto mt-24 max-w-6xl px-6 pb-20 md:mt-32 md:pb-28">
-    <div class="border-t border-cyan-300/15 pt-8 md:grid md:grid-cols-[0.7fr_1.3fr] md:gap-8 md:pt-10">
-      <div>
-        <p class="font-mono text-xs tracking-[0.18em] text-cyan-300">CURRENT STATUS</p>
-        <h2 class="mt-4 text-3xl font-semibold tracking-[-0.04em] text-white md:text-4xl">{project.status}</h2>
-      </div>
-      <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-300 md:mt-0">{statusSummary}</p>
-    </div>
-  </section>
+  <div class="pb-20 md:pb-28">
+    <DocumentationSection label="OVERVIEW" title="Engineering context." content={project.description} />
+    <DocumentationSection label="OBJECTIVE" title="What this record explores." content={project.objective} />
+    <DocumentationSection label="ENGINEERING APPROACH" title="Learning through deliberate practice." content={project.approach} />
+    <DocumentationSection label="TECHNOLOGIES" title="Public project vocabulary." items={project.technologies} />
+    <DocumentationSection label="LESSONS LEARNED" title="Knowledge captured through iteration." content={project.lessons} />
+    <DocumentationSection label="ENGINEERING PHILOSOPHY" title="Documented through practice." content={project.philosophy} />
+    <DocumentationSection label="FUTURE EVOLUTION" title="Next areas of exploration." content={project.future} />
+  </div>
 </Layout>

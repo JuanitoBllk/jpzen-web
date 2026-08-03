@@ -41,7 +41,11 @@ const projects = [
     route: '/projects/openclaw/',
     description: 'An exploration platform focused on AI-assisted workflows, automation experiments and practical agent-based systems.',
     technologies: ['AI Agents', 'Automation Workflows', 'Self-hosted Services'],
-    philosophy: 'This project explores how intelligent systems can become practical tools through experimentation, iteration and controlled environments.'
+    philosophy: 'This project explores how intelligent systems can become practical tools through experimentation, iteration and controlled environments.',
+    objective: 'Explore practical AI-assisted workflows and automation systems.',
+    approach: 'Experiment through controlled environments and incremental improvements.',
+    lessons: 'Document learning, iteration and practical limitations of automation systems.',
+    future: 'Continue exploring useful AI workflows and integrations.'
   },
   {
     slug: 'proxmox-lab',
@@ -52,7 +56,11 @@ const projects = [
     route: '/projects/proxmox-lab/',
     description: 'A virtualization laboratory used to explore private infrastructure, containers and system management concepts.',
     technologies: ['Virtualization', 'Linux', 'Container Platforms'],
-    philosophy: 'The laboratory provides a controlled environment to understand how modern infrastructure systems are designed, deployed and improved.'
+    philosophy: 'The laboratory provides a controlled environment to understand how modern infrastructure systems are designed, deployed and improved.',
+    objective: 'Understand virtualization, containers and infrastructure concepts through hands-on experimentation.',
+    approach: 'Build knowledge through controlled testing environments.',
+    lessons: 'Infrastructure knowledge improves through experimentation, documentation and repetition.',
+    future: 'Continue expanding understanding of modern infrastructure systems.'
   },
   {
     slug: 'home-network',
@@ -63,7 +71,11 @@ const projects = [
     route: '/projects/home-network/',
     description: 'A progressive networking evolution project focused on improving architecture, organization and security through practical learning.',
     technologies: ['DNS Architecture', 'Network Segmentation', 'Firewall Concepts'],
-    philosophy: 'Networking knowledge grows through incremental improvements, measurement and evidence-based decisions.'
+    philosophy: 'Networking knowledge grows through incremental improvements, measurement and evidence-based decisions.',
+    objective: 'Explore networking concepts through progressive improvements.',
+    approach: 'Study architecture, organization and security concepts.',
+    lessons: 'Reliable networks are built through measurement and gradual improvement.',
+    future: 'Continue learning networking architecture and security practices.'
   }
 ];
 
