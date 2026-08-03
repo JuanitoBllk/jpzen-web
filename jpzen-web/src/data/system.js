@@ -1,9 +1,13 @@
-export const systems = [
+console.log("SYSTEMS LOADED");
+ const systems = [
 
   {
+    id: "atlas",
+
     name: "ATLAS",
 
     category: "Infrastructure Core",
+    health:100,
 
     description:
       "The foundation layer where systems are built, tested and maintained.",
@@ -34,9 +38,12 @@ export const systems = [
 
 
   {
+    id: "nova",
+
     name: "NOVA",
 
     category: "AI & Automation Core",
+    health: 80,
 
     description:
       "Exploring intelligent systems, agents and automation workflows.",
@@ -62,7 +69,10 @@ export const systems = [
 
 
   {
+    id: "orion",
+
     name: "ORION",
+    health: 40,
 
     category: "Network & Connectivity Core",
 
@@ -92,3 +102,4 @@ export const systems = [
   }
 
 ];
+export { systems };

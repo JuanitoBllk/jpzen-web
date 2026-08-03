@@ -33,7 +33,52 @@ SYSTEM TERMINAL
 
 </p>
 
+<div class="mt-8">
 
+<p class="text-xs tracking-widest text-gray-500">
+CORE STATUS
+</p>
+
+
+<div class="mt-3 h-2 bg-gray-800 rounded-full overflow-hidden">
+
+<div
+class="h-full bg-cyan-400"
+style={`width:${system.health}%`}
+>
+</div>
+
+</div>
+
+
+<p class="mt-3 text-cyan-400 font-mono text-sm">
+
+{system.health}% ONLINE
+
+</p>
+
+
+</div>
+
+<div class="mb-8 font-mono text-sm text-cyan-400">
+
+<p class="boot-line">
+> INITIALIZING CORE...
+</p>
+
+<p class="boot-line">
+> CHECKING SYSTEMS...
+</p>
+
+<p class="boot-line">
+> LOADING SERVICES...
+</p>
+
+<p class="boot-line">
+> CONNECTION ESTABLISHED
+</p>
+
+</div>
 
 <div class="mt-8 space-y-6 font-mono text-sm">
 
@@ -85,3 +130,49 @@ value.map(item => (
 
 
 </section>
+
+<style>
+
+.boot-line {
+  opacity:0;
+  animation: boot 0.5s forwards;
+}
+
+
+.boot-line:nth-child(1){
+  animation-delay:0.2s;
+}
+
+
+.boot-line:nth-child(2){
+  animation-delay:0.6s;
+}
+
+
+.boot-line:nth-child(3){
+  animation-delay:1s;
+}
+
+
+.boot-line:nth-child(4){
+  animation-delay:1.4s;
+}
+
+
+
+@keyframes boot {
+
+from {
+ opacity:0;
+ transform:translateX(-10px);
+}
+
+
+to {
+ opacity:1;
+ transform:translateX(0);
+}
+
+}
+
+</style>
