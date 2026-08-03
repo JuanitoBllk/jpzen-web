@@ -16,23 +16,43 @@ import ProjectCard from './ProjectCard.astro';
       name="ATLAS"
       category="Infrastructure Core"
       description="The foundation layer where systems are built, tested and maintained."
-      status="● ONLINE"
+      systems={[
+        "Proxmox VE",
+        "Linux Containers",
+        "Docker Runtime",
+        "Self-hosted Services"
+      ]}
+      status="● OPERATIONAL"
     />
+
 
 
     <ProjectCard
       name="NOVA"
       category="AI & Automation Core"
       description="Exploring intelligent systems, agents and automation workflows."
-      status="● ONLINE"
+      systems={[
+        "OpenClaw",
+        "AI Agents",
+        "Automation Workflows",
+        "Experimental Systems"
+      ]}
+      status="● OPERATIONAL"
     />
+
 
 
     <ProjectCard
       name="ORION"
       category="Network & Connectivity Core"
       description="Designing a smarter and more secure connectivity environment."
-      status="○ PLANNED"
+      systems={[
+        "DNS Architecture",
+        "VLAN Segmentation",
+        "Firewall Layer",
+        "Wireless Infrastructure"
+      ]}
+      status="○ DEVELOPMENT"
     />
 
 

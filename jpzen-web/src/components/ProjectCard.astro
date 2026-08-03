@@ -3,16 +3,19 @@ const {
   name,
   category,
   description,
+  systems,
   status
 } = Astro.props;
 ---
 
+
 <div class="border border-cyan-400/20 rounded-xl p-6 bg-white/5 backdrop-blur-md hover:border-cyan-400 transition">
+
 
   <div class="flex justify-between items-start">
 
     <h3 class="text-2xl font-bold tracking-wider">
-      {name}
+      ◇ {name}
     </h3>
 
     <span class="text-cyan-400 text-sm">
@@ -22,14 +25,40 @@ const {
   </div>
 
 
+
   <p class="mt-2 text-sm text-cyan-300">
     {category}
   </p>
 
 
+
   <p class="mt-5 text-gray-400">
     {description}
   </p>
+
+
+
+  <div class="mt-6">
+
+    <p class="text-xs tracking-widest text-gray-500 mb-3">
+      SYSTEMS
+    </p>
+
+
+    <ul class="space-y-2 text-sm text-gray-300">
+
+      {systems.map((system) => (
+
+        <li>
+          ✓ {system}
+        </li>
+
+      ))}
+
+    </ul>
+
+
+  </div>
 
 
 </div>
