@@ -1,7 +1,9 @@
 ---
 import ArchitectureDiagram from '../../components/ArchitectureDiagram.astro';
 import DocumentationSection from '../../components/DocumentationSection.astro';
+import EvidenceGallery from '../../components/EvidenceGallery.astro';
 import { diagrams } from '../../data/diagrams.js';
+import { evidence } from '../../data/evidence.js';
 import Layout from '../../layouts/Layout.astro';
 import ProjectPageHero from '../../components/ProjectPageHero.astro';
 import { projects } from '../../data/projects.js';
@@ -15,6 +17,7 @@ export function getStaticPaths() {
 
 const { project } = Astro.props;
 const diagram = diagrams.find((item) => item.id === project.diagram);
+const projectEvidence = evidence.filter((item) => item.relatedProject === project.slug);
 ---
 
 <Layout
@@ -32,6 +35,7 @@ const diagram = diagrams.find((item) => item.id === project.diagram);
     <DocumentationSection label="EXPERIMENT AREAS" title="Practical infrastructure study." items={project.experimentAreas} />
     <DocumentationSection label="TECHNOLOGIES" title="Public project vocabulary." items={project.technologies} />
     <DocumentationSection label="LESSONS LEARNED" title="Knowledge captured through iteration." content={project.lessons} />
+    <EvidenceGallery evidence={projectEvidence} />
     <DocumentationSection label="ENGINEERING PHILOSOPHY" title="Documented through practice." content={project.philosophy} />
     <DocumentationSection label="FUTURE EVOLUTION" title="Next areas of exploration." content={project.future} />
   </div>
