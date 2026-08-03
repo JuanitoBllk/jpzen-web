@@ -2,9 +2,14 @@
 import '../styles/global.css';
 import Navbar from '../components/Navbar.astro';
 
-const { title = "JPZEN" } = Astro.props;
-const description = "JPZEN is a personal technology laboratory for practical exploration in infrastructure, artificial intelligence, automation, and networking.";
-const canonicalUrl = "https://jpzen.net";
+const {
+  title = "JPZEN",
+  description = "JPZEN is a personal technology laboratory for practical exploration in infrastructure, artificial intelligence, automation, and networking.",
+  canonicalPath = "/"
+} = Astro.props;
+const siteUrl = "https://jpzen.net";
+const canonicalUrl = new URL(canonicalPath, siteUrl).href;
+const socialImageUrl = new URL("/og-image.png", siteUrl).href;
 ---
 
 <html lang="en">
@@ -22,7 +27,7 @@ const canonicalUrl = "https://jpzen.net";
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:url" content={canonicalUrl} />
-<meta property="og:image" content={`${canonicalUrl}/og-image.png`} />
+<meta property="og:image" content={socialImageUrl} />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:image:alt" content="JPZEN Personal Technology Laboratory" />
@@ -30,7 +35,7 @@ const canonicalUrl = "https://jpzen.net";
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
-<meta name="twitter:image" content={`${canonicalUrl}/og-image.png`} />
+<meta name="twitter:image" content={socialImageUrl} />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

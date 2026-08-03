@@ -1,0 +1,43 @@
+---
+import ArchitectureFlow from '../components/ArchitectureFlow.astro';
+import CorePageHero from '../components/CorePageHero.astro';
+import SystemCard from '../components/SystemCard.astro';
+import { atlas } from '../data/atlas.js';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="ATLAS | JPZEN"
+  description="ATLAS is the implemented infrastructure foundation of the JPZEN personal technology laboratory."
+  canonicalPath="/atlas"
+>
+  <CorePageHero core={atlas} />
+
+  <div class="mt-24 md:mt-32">
+    <ArchitectureFlow title="Infrastructure layers" nodes={atlas.architecture} />
+  </div>
+
+  <section class="mx-auto mt-24 max-w-6xl px-6 md:mt-32">
+    <div class="grid gap-8 border-t border-cyan-300/15 pt-8 md:grid-cols-[0.7fr_1.3fr] md:pt-10">
+      <div>
+        <p class="font-mono text-xs tracking-[0.18em] text-cyan-300">SYSTEMS</p>
+        <h2 class="mt-4 text-3xl font-semibold tracking-[-0.04em] text-white md:text-4xl">Infrastructure tools in context.</h2>
+      </div>
+      <p class="max-w-2xl text-base leading-7 text-slate-400">ATLAS brings together the public concepts behind the laboratory’s private infrastructure. These entries describe roles, not externally accessible services.</p>
+    </div>
+
+    <div class="mt-12 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+      {atlas.systems.map((system, index) => <SystemCard system={system} index={index} />)}
+    </div>
+  </section>
+
+  <section class="mx-auto mt-24 max-w-6xl px-6 pb-20 md:mt-32 md:pb-28">
+    <div class="border-l border-cyan-300/45 pl-6 md:grid md:grid-cols-[0.7fr_1.3fr] md:gap-8 md:pl-8">
+      <div>
+        <p class="font-mono text-xs tracking-[0.18em] text-cyan-300">PHILOSOPHY</p>
+        <h2 class="mt-4 text-3xl font-semibold tracking-[-0.04em] text-white md:text-4xl">A foundation for what comes next.</h2>
+      </div>
+      <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-300 md:mt-0">ATLAS is the base where future systems are built, tested, and improved. Its purpose is not to present a finished platform, but to create a dependable environment for deliberate experimentation.</p>
+    </div>
+  </section>
+</Layout>

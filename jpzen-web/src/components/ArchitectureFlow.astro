@@ -1,0 +1,22 @@
+---
+const { title = 'Architecture', nodes = [] } = Astro.props;
+---
+
+<section class="mx-auto max-w-6xl px-6">
+  <div class="grid gap-8 border-t border-cyan-300/15 pt-8 md:grid-cols-[0.7fr_1.3fr] md:pt-10">
+    <div>
+      <p class="font-mono text-xs tracking-[0.18em] text-cyan-300">SYSTEM MAP</p>
+      <h2 class="mt-4 text-3xl font-semibold tracking-[-0.04em] text-white md:text-4xl">{title}</h2>
+    </div>
+    <p class="max-w-2xl text-base leading-7 text-slate-400">A public-safe view of the layers that support ATLAS. Internal addresses, credentials, and administrative endpoints remain private.</p>
+  </div>
+
+  <ol class="mt-12 grid gap-0 border-y border-cyan-300/15 md:grid-cols-5">
+    {nodes.map((node, index) => (
+      <li class="relative border-b border-cyan-300/10 px-5 py-6 last:border-b-0 md:border-b-0 md:px-6 md:first:pl-0 md:[&:not(:last-child)]:border-r md:[&:not(:last-child)]:border-cyan-300/10">
+        <p class="font-mono text-xs text-cyan-300">0{index + 1}</p>
+        <p class="mt-4 text-sm font-medium tracking-[0.04em] text-slate-200">{node}</p>
+      </li>
+    ))}
+  </ol>
+</section>
