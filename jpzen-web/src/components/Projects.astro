@@ -1,5 +1,6 @@
 ---
 import ProjectCard from './ProjectCard.astro';
+import { systems } from '../data/system.js';
 ---
 
 <section id="projects" class="mt-24 max-w-5xl mx-auto px-6">
@@ -12,48 +13,20 @@ import ProjectCard from './ProjectCard.astro';
   <div class="grid md:grid-cols-3 gap-6">
 
 
-    <ProjectCard
-      name="ATLAS"
-      category="Infrastructure Core"
-      description="The foundation layer where systems are built, tested and maintained."
-      systems={[
-        "Proxmox VE",
-        "Linux Containers",
-        "Docker Runtime",
-        "Self-hosted Services"
-      ]}
-      status="● OPERATIONAL"
-    />
+    {
+      systems.map((system) => (
 
+<ProjectCard
+ name={system.name}
+ category={system.category}
+ description={system.description}
+ systems={system.systems}
+ status={system.status}
+ details={system.details}
+/>
 
-
-    <ProjectCard
-      name="NOVA"
-      category="AI & Automation Core"
-      description="Exploring intelligent systems, agents and automation workflows."
-      systems={[
-        "OpenClaw",
-        "AI Agents",
-        "Automation Workflows",
-        "Experimental Systems"
-      ]}
-      status="● OPERATIONAL"
-    />
-
-
-
-    <ProjectCard
-      name="ORION"
-      category="Network & Connectivity Core"
-      description="Designing a smarter and more secure connectivity environment."
-      systems={[
-        "DNS Architecture",
-        "VLAN Segmentation",
-        "Firewall Layer",
-        "Wireless Infrastructure"
-      ]}
-      status="○ DEVELOPMENT"
-    />
+      ))
+    }
 
 
   </div>

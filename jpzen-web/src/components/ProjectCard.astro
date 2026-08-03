@@ -8,7 +8,6 @@ const {
 } = Astro.props;
 ---
 
-
 <div class="border border-cyan-400/20 rounded-xl p-6 bg-white/5 backdrop-blur-md hover:border-cyan-400 transition">
 
 
@@ -44,7 +43,6 @@ const {
       SYSTEMS
     </p>
 
-
     <ul class="space-y-2 text-sm text-gray-300">
 
       {systems.map((system) => (
@@ -60,5 +58,15 @@ const {
 
   </div>
 
+
+</div>
+
+<div class="mt-6 text-center">
+
+  <button
+    class="border border-cyan-400/40 px-5 py-2 rounded-full text-xs tracking-widest text-cyan-400 hover:bg-cyan-400 hover:text-black transition"
+  >
+    ACCESS SYSTEM
+  </button>
 
 </div>
